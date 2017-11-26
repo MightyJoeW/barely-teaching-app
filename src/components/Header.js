@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = props => (
   <div className="header">
@@ -7,6 +8,18 @@ const Header = props => (
       {props.subtitle && (
         <h2 className="header__subtitle"> {props.subtitle} </h2>
       )}
+      <NavLink to="/dashboard" activeClassName="is-active" exact={true}>
+        Dashboard
+      </NavLink>
+      <NavLink to="/journal" activeClassName="is-active">
+        Journal
+      </NavLink>
+      <NavLink to="/kidfree" activeClassName="is-active">
+        Kid Free
+      </NavLink>
+      <NavLink to="/help" activeClassName="is-active">
+        Help
+      </NavLink>
     </div>
   </div>
 );
