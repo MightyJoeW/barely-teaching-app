@@ -9,9 +9,15 @@ module.exports = {
   module: {
     rules: [
       {
+        // run babel when encountering a js file
         loader: "babel-loader",
         test: /\.js$/,
         exclude: /node_modules/
+      },
+      {
+        // convert code from scss to css
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
