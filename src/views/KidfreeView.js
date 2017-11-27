@@ -1,5 +1,12 @@
 import React from "react";
 
-const KidFreeView = () => <div>Kid-Free component</div>;
+import moment from "moment";
 
+const KidFreeView = () => {
+  return (
+    <div>
+      <h1>Kid-Free component</h1>
+    </div>
+  );
+};
 export default KidFreeView;

@@ -15,7 +15,7 @@ const Header = props => (
         Journal
       </NavLink>
       <NavLink to="/kidfree" activeClassName="is-active">
-        Kid Free
+        Kid-Free
       </NavLink>
       <NavLink to="/help" activeClassName="is-active">
         Help
