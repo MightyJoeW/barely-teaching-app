@@ -7,7 +7,7 @@ import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
 
-export default class IndecisionApp extends React.Component {
+export default class BarelyTeachingApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
@@ -79,7 +79,6 @@ export default class IndecisionApp extends React.Component {
 
     return (
       <div>
-        <Header subtitle={subtitle} />
         <div className="container">
           <Action
             hasOptions={this.state.options.length > 0}

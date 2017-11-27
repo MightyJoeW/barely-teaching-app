@@ -4,6 +4,6 @@ import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
 //COMPONENTS
-import IndecisionApp from "./components/IndecisionApp";
+import AppRouter from "./routers/AppRouter";
 
-ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
+ReactDOM.render(<AppRouter />, document.getElementById("app"));
