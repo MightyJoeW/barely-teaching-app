@@ -1,5 +1,5 @@
 import React from "react";
 
-const JournalView = () => <div>this is my journal component</div>;
+const JournalView = () => <div>Journal Component</div>;
 
 export default JournalView;

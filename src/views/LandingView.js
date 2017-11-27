@@ -1,5 +1,5 @@
 import React from "react";
 
-const LandingView = () => <div>this is from my landing page component</div>;
+const LandingView = () => <div>Landing Page component</div>;
 
 export default LandingView;

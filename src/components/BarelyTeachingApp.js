@@ -7,7 +7,7 @@ import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
 
-export default class IndecisionApp extends React.Component {
+export default class BarelyTeachingApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
