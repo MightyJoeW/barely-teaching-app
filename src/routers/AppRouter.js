@@ -18,7 +18,7 @@ const AppRouter = () => (
       <Header subtitle={subtitle} />
       <Switch>
         <Route exact path="/" component={LandingView} />
-        <Route path="/dashboard" component={BarelyTeachingApp} />
+        <Route path="/tasks" component={BarelyTeachingApp} />
         <Route path="/journal" component={JournalView} />
         <Route path="/kidfree" component={KidFreeView} />
         <Route path="/help" component={HelpView} />

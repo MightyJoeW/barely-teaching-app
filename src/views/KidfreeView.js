@@ -1,7 +1,5 @@
 import React from "react";
 
-import moment from "moment";
-
 const KidFreeView = () => {
   return (
     <div>
