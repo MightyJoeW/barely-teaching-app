@@ -4094,6 +4094,10 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-simple-timer@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-simple-timer/-/react-simple-timer-1.0.6.tgz#b6b3d71590ee3f5cdaa9971b380c9d88cd2e4503"
+
 react-tap-event-plugin@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-3.0.2.tgz#280371677b881c31376e0027a0b86d2c6de039ee"

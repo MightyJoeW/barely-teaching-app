@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button";
 import DeleteIcon from "material-ui/svg-icons/action/delete";
 import DoneIcon from "material-ui/svg-icons/action/done";
 import MicrophoneIcon from "material-ui/svg-icons/av/mic";
+import ReactSimpleTimer from "react-simple-timer";
 
 import { styles } from "./styles.scss";
 
@@ -21,18 +22,18 @@ class RecordView extends Component {
     });
   };
 
-  // deleteRecording = () => {
-  //   this.setState({
-  //     recording: false
-  //   });
-  // };
+  deleteRecording = () => {
+    this.setState({
+      recording: false
+    });
+  };
 
-  // saveRecording = () => {
-  //   this.setState({
-  //     recording: false,
-  //     saveRecording: true
-  //   });
-  // };
+  saveRecording = () => {
+    this.setState({
+      recording: false,
+      saveRecording: true
+    });
+  };
 
   // onStop = recording => {
   //   const { saveRecording } = this.state;
@@ -53,6 +54,7 @@ class RecordView extends Component {
           <Button
             className="secondary delete"
             iconOnly={true}
+            onTouchTap={this.deleteRecording}
             icon={<DeleteIcon />}
           />
           <Button
@@ -65,6 +67,7 @@ class RecordView extends Component {
           <Button
             className="secondary save"
             iconOnly={true}
+            onTouchTap={this.saveRecording}
             icon={<DoneIcon />}
           />
         </div>
@@ -83,7 +86,10 @@ class RecordView extends Component {
     }
     return (
       <div className={styles}>
-        <div id="controls">{buttons} </div>
+        <div id="controls">
+          <ReactSimpleTimer play={recording} />
+          {buttons}
+        </div>
       </div>
     );
   }
