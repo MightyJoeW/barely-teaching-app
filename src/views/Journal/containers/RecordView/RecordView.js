@@ -97,7 +97,11 @@ class RecordView extends Component {
     }
     return (
       <div className={styles}>
-        <Microphone record={recording} onStop={this.onStop} />
+        <Microphone
+          className="mic-icon"
+          record={recording}
+          onStop={this.onStop}
+        />
         <div id="controls">
           <ReactSimpleTimer play={recording} />
           {buttons}

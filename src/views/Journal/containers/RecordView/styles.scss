@@ -4,12 +4,13 @@
   text-align: center;
 
   #controls {
-    position: absolute;
+    position: relative;
     left: 0px;
     bottom: 20px;
     width: 100%;
     border-top: 1px solid $lighterGrey;
     padding-top: 10px;
+    margin-top: 9rem;
   }
 
   .timer {

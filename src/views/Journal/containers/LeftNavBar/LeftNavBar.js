@@ -26,7 +26,9 @@ class LeftNavBar extends React.Component {
           open={this.props.ui.leftNavOpen}
           onRequestChange={this.closeNav}
         >
-          <AppBar title="" />
+          <AppBar title="VentZone" />
+
+          <h1> Hello </h1>
           <Divider />
         </Drawer>
       </div>
