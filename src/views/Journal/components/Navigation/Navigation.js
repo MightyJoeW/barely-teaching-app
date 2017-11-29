@@ -11,12 +11,19 @@ class Navigation extends Component {
     this.state = { currentRoute: "/journal/record" };
   }
 
-  handleChange = route => {
+  componentDidMount() {
+    const { pathname } = this.props.location;
+    this.handleChange(pathname, false);
+  }
+
+  handleChange = (route, updateURL) => {
     this.setState({
       currentRoute: route
     });
 
-    this.pushRoute(route);
+    if (updateURL !== false) {
+      this.pushRoute(route);
+    }
   };
 
   pushRoute(route) {
