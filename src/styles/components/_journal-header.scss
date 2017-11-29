@@ -1,0 +1,23 @@
+.journal-header {
+  background: black;
+  font-size: $l-size;
+  line-height: 64px;
+  margin-bottom: $m-size;
+  // margin-top: -50px;
+  padding: $m-size 0;
+  a {
+    text-decoration: none;
+    color: $title-blue;
+  }
+}
+
+.journal-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .journal-header {
+    margin-bottom: $xl-size;
+  }
+}

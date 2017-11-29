@@ -1,5 +1,9 @@
 import React from "react";
 
-const HelpView = () => <div>Help component</div>;
+const HelpView = () => (
+  <div>
+    <h1>Help component</h1>
+  </div>
+);
 
 export default HelpView;

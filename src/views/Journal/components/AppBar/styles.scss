@@ -1,0 +1,7 @@
+@import "../../containers/App/styles/variables.scss";
+
+:local(.styles) {
+  .app-bar {
+    background: $darkGrey !important;
+  }
+}
