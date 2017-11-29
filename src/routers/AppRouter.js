@@ -1,14 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 
 //COMPONENTS
 import BarelyTeachingApp from "./../components/BarelyTeachingApp";
 import Header from "./../components/Header";
 import HelpView from "../views/HelpView";
+import JournalHeader from "../views/Journal/containers/JournalHeader/JournalHeader";
 import JournalView from "../views/Journal/containers/App/JournalView";
 import KidFreeView from "../views/KidFreeView";
 import LandingView from "../views/LandingView";
 import NotFoundView from "../views/NotFoundView";
+import RecordView from "../views/Journal/containers/RecordView/RecordView";
+import RecordingsView from "../views/Journal/containers/RecordingsView/RecordingsView";
 
 const subtitle = `The #1 companion for jaded teachers`;
 

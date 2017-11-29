@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import AppBar from "../../components/AppBar/AppBar";
-import Navigation from "../../components/Navigation/Naivgation";
+import Navigation from "../../components/Navigation/Navigation";
 
 /* actions */
 import * as uiActionCreators from "../../core/actions/actions-ui";
