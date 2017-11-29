@@ -1,31 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import { Tabs, Tab } from "material-ui";
 import { withRouter } from "react-router-dom";
 
 /* component styles */
 import { styles } from "./styles.scss";
 
-class Navigation extends React.Component {
+class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = { currentRoute: "/journal/record" };
   }
 
-  handleChange = (route, updateURL) => {
+  handleChange = route => {
     this.setState({
       currentRoute: route
     });
+
+    this.pushRoute(route);
   };
 
   pushRoute(route) {
     const { history } = this.props;
 
     switch (route) {
-      case "journal/record":
-        history.push("journal/record");
+      case "/journal/record":
+        history.push("/journal/record");
         break;
-      case "journal/recordings":
-        history.push("journal/recordings");
+      case "/journal/recordings":
+        history.push("/journal/recordings");
         break;
       default:
         break;
