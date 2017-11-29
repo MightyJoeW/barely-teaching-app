@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
@@ -13,28 +15,56 @@ import JournalHeader from "../JournalHeader/JournalHeader";
 import LeftNavBar from "../LeftNavBar/LeftNavBar";
 import RecordView from "../RecordView/RecordView";
 import RecordingsView from "../RecordingsView/RecordingsView";
+import DetailsView from "..//DetailsView/DetailsView";
+
+/* actions */
+import * as audioActionCreators from "../../core/actions/actions-audios";
 
 injectTapEventPlugin();
 OfflinePluginRuntime.install();
 
-const JournalView = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-    <div>
-      <BrowserRouter>
+export class JournalView extends Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    const { actions } = this.props;
+    actions.audio.getAllRecordings();
+  }
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
-          <JournalHeader />
-          <div className="container">
-            <Switch>
-              <Route path="/journal/record" component={RecordView} />
-              <Route path="/journal/recordings" component={RecordingsView} />
-              <Redirect from="/journal" to="/journal/record" />
-            </Switch>
-          </div>
-          <LeftNavBar />
+          <BrowserRouter>
+            <div>
+              <JournalHeader />
+              <div className="container">
+                <Switch>
+                  <Route path="/journal/record" component={RecordView} />
+                  <Route
+                    path="/journal/recordings"
+                    component={RecordingsView}
+                  />
+                  <Route path="/recording:id" component={RecordingsView} />
+                  <Redirect from="/journal" to="/journal/record" />
+                </Switch>
+              </div>
+              <DetailsView />
+              <LeftNavBar />
+            </div>
+          </BrowserRouter>
         </div>
-      </BrowserRouter>
-    </div>
-  </MuiThemeProvider>
-);
+      </MuiThemeProvider>
+    );
+  }
+}
 
-export default JournalView;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      audio: bindActionCreators(audioActionCreators, dispatch)
+    }
+  };
+}
+
+export default connect(null, mapDispatchToProps)(JournalView);

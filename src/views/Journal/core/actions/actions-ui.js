@@ -17,3 +17,21 @@ export function closeNav() {
     type: constants.CLOSE_NAV
   };
 }
+
+/**
+ * openRightNav - Open the right side nav
+ */
+export function openRightNav() {
+  return {
+    type: constants.OPEN_RIGHT_NAV
+  };
+}
+
+/**
+ * closeRightNav - Close the right side nav
+ */
+export function closeRightNav() {
+  return {
+    type: constants.CLOSE_RIGHT_NAV
+  };
+}
