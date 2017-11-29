@@ -4053,6 +4053,19 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-ga@^2.2.0:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.3.5.tgz#7c3d0c530b2bbe64ceb1faa79be340685aa84a9a"
+  dependencies:
+    object-assign "^4.1.1"
+
+react-mic@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-mic/-/react-mic-9.0.0.tgz#07044b79c5e2ce021b4fb6c0b42cda274faeb820"
+  dependencies:
+    prop-types "^15.5.10"
+    react-ga "^2.2.0"
+
 react-modal@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.4.tgz#eea7369ea4f05ab2897ccca2c676d7d81a5a88b0"

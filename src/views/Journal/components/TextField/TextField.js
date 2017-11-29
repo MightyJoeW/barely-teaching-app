@@ -1,12 +1,8 @@
-/**
- * Text Field - A common Text Field
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import { TextField as MaterialTextField } from "material-ui";
 
-/* component styles */
+//Textfield styles
 import { styles } from "./styles.scss";
 
 export default function TextField(props) {

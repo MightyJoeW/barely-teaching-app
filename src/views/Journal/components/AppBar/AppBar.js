@@ -1,11 +1,7 @@
-/**
- * AppBar
- */
-
 import React from "react";
 import { AppBar as MuiAppBar } from "material-ui";
 
-/* component styles */
+//Appbar styles
 import { styles } from "./styles.scss";
 
 export default function AppBar(props) {

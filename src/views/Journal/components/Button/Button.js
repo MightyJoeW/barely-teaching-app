@@ -1,7 +1,3 @@
-/**
- * Button - A common button
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import {
@@ -11,7 +7,7 @@ import {
   IconButton
 } from "material-ui";
 
-/* component styles */
+//Buton styles
 import { styles } from "./styles.scss";
 
 const mainClassName = "btn";

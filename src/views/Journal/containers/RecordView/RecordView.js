@@ -1,18 +1,28 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import Button from "../../components/Button/Button";
+import Microphone from "../../components/Microphone/Microphone";
+import ReactSimpleTimer from "react-simple-timer";
+import { withRouter } from "react-router-dom";
+
+//ICONS
 import DeleteIcon from "material-ui/svg-icons/action/delete";
 import DoneIcon from "material-ui/svg-icons/action/done";
 import MicrophoneIcon from "material-ui/svg-icons/av/mic";
-import ReactSimpleTimer from "react-simple-timer";
 
 import { styles } from "./styles.scss";
+
+//ACTIONS
+import * as audioActionCreators from "../../core/actions/actions-audios";
 
 class RecordView extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      recording: false
+      recording: false,
+      saveRecording: false
     };
   }
 
@@ -35,14 +45,15 @@ class RecordView extends Component {
     });
   };
 
-  // onStop = recording => {
-  //   const { saveRecording } = this.state;
-  //   const { actions } = this.props;
+  onStop = recording => {
+    const { saveRecording } = this.state;
+    const { actions, history } = this.props;
 
-  //   if (saveRecording) {
-  //     actions.audio.saveRecording(recording);
-  //   }
-  // };
+    if (saveRecording) {
+      history.push("/journal/recordings");
+      actions.audio.saveRecording(recording);
+    }
+  };
 
   render() {
     let buttons;
@@ -86,6 +97,7 @@ class RecordView extends Component {
     }
     return (
       <div className={styles}>
+        <Microphone record={recording} onStop={this.onStop} />
         <div id="controls">
           <ReactSimpleTimer play={recording} />
           {buttons}
@@ -95,4 +107,12 @@ class RecordView extends Component {
   }
 }
 
-export default RecordView;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      audio: bindActionCreators(audioActionCreators, dispatch)
+    }
+  };
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(RecordView));

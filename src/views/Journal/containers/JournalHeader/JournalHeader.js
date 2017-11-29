@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import AppBar from "../../components/AppBar/AppBar";
 import Navigation from "../../components/Navigation/Navigation";
+import { withRouter } from "react-router-dom";
 
 /* actions */
 import * as uiActionCreators from "../../core/actions/actions-ui";
@@ -43,4 +44,6 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(JournalHeader);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(JournalHeader)
+);
