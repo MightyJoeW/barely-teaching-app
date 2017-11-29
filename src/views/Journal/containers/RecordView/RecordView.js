@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "../../components/Button/Button";
 import MicrophoneIcon from "material-ui/svg-icons/av/mic";
 
 import { styles } from "./styles.scss";
 
-class RecordView extends Component {
+class RecordView extends React.Component {
   constructor(props) {
     super(props);
   }
