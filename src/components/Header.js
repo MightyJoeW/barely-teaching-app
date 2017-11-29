@@ -8,14 +8,14 @@ const Header = props => (
       {props.subtitle && (
         <h2 className="header__subtitle"> {props.subtitle} </h2>
       )}
-      <NavLink to="/dashboard" activeClassName="is-active" exact={true}>
-        Dashboard
+      <NavLink to="/tasks" activeClassName="is-active" exact={true}>
+        Tasks
       </NavLink>
       <NavLink to="/journal" activeClassName="is-active">
         Journal
       </NavLink>
       <NavLink to="/kidfree" activeClassName="is-active">
-        Kid Free
+        Kid-Free
       </NavLink>
       <NavLink to="/help" activeClassName="is-active">
         Help
