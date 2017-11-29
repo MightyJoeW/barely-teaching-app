@@ -12,14 +12,13 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 const JournalView = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
     <div>
-      <JournalHeader />
-      {/* <JournalSubheader /> */}
+      <JournalSubheader />
       <div className="container">
         <h1> (Mic image) </h1>
         <h1> (Soundwave visual) </h1>
         <h1> (Recording time) </h1>
         <h1> Mic photo incoming </h1>
-        {/* <LeftNavBar /> */}
+        <LeftNavBar />
       </div>
     </div>
   </MuiThemeProvider>
