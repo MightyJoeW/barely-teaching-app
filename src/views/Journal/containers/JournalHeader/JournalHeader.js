@@ -1,38 +1,46 @@
 import React from "react";
-import Drawer from "material-ui/Drawer";
-import MenuItem from "material-ui/MenuItem";
-import RaisedButton from "material-ui/RaisedButton";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import AppBar from "../../components/AppBar/AppBar";
+import Navigation from "../../components/Navigation/Naivgation";
 
-export default class JournalHeader extends React.Component {
+/* actions */
+import * as uiActionCreators from "../../core/actions/actions-ui";
+
+/* component styles */
+import { styles } from "./styles.scss";
+
+class JournalHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
   }
 
-  handleToggle = () =>
-    this.setState({
-      open: !this.state.open
-    });
-
-  handleClose = () =>
-    this.setState({
-      open: false
-    });
+  handleToggle = () => {
+    this.props.actions.ui.openNav();
+  };
 
   render() {
     return (
-      <div>
-        <RaisedButton label="New Voice Recording" onClick={this.handleToggle} />
-        <Drawer
-          docked={false}
-          width={200}
-          open={this.state.open}
-          onRequestChange={open => this.setState({ open })}
-        >
-          <MenuItem onClick={this.handleClose}>Menu Item</MenuItem>
-          <MenuItem onClick={this.handleClose}>Menu Item 2</MenuItem>
-        </Drawer>
+      <div className={styles}>
+        <AppBar onLeftIconButtonTouchTap={this.handleToggle} />
+        <Navigation />
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      ui: bindActionCreators(uiActionCreators, dispatch)
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(JournalHeader);
