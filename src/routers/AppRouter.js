@@ -7,7 +7,7 @@ import Header from "./../components/Header";
 import HelpView from "../views/HelpView";
 import JournalHeader from "../views/Journal/containers/JournalHeader/JournalHeader";
 import JournalView from "../views/Journal/containers/App/JournalView";
-import KidFreeView from "../views/KidFreeView";
+import KidFreeView from "../views//Kidfree/containers/App/KidFreeView";
 import LandingView from "../views/LandingView";
 import NotFoundView from "../views/NotFoundView";
 import RecordView from "../views/Journal/containers/RecordView/RecordView";
