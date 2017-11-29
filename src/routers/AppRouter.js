@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import BarelyTeachingApp from "./../components/BarelyTeachingApp";
 import Header from "./../components/Header";
 import HelpView from "../views/HelpView";
-import JournalView from "../views/JournalView";
+import JournalView from "../views/Journal/containers/App/JournalView";
 import KidFreeView from "../views/KidFreeView";
 import LandingView from "../views/LandingView";
 import NotFoundView from "../views/NotFoundView";
