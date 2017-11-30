@@ -1,7 +1,11 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, combineReducers } from "redux";
 import reduxThunk from "redux-thunk";
 import { createLogger } from "redux-logger";
 import rootReducer from "../reducers";
+
+//REPORTS
+import reportsReducer from "../../../Reports/reducers/reports";
+import filtersReducer from "../../../Reports/reducers/filters";
 
 export default function configureStore(initialState) {
   const logger = createLogger({
@@ -12,6 +16,13 @@ export default function configureStore(initialState) {
   const middleware = applyMiddleware(reduxThunk, logger);
 
   const store = middleware(createStore)(rootReducer, initialState);
+
+  const storeR = createStore(
+    combineReducers({
+      reports: reportsReducer,
+      filters: filtersReducer
+    })
+  );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

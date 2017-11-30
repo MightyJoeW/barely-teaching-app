@@ -16,7 +16,7 @@ export const addReport = (
 
 // REMOVE_REPORT
 export const removeReport = ({ id } = {}) => ({
-  type: "REMOVE_report",
+  type: "REMOVE_REPORT",
   id
 });
 

@@ -5,6 +5,8 @@ import AddReportView from "../AddReportView/AddReportView";
 import EditReportView from "../EditReportView/EditReportView";
 import ReportsHeader from "../ReportsHeader/ReportsHeader";
 import ReportsNotFoundView from "../ReportsNotFoundView/ReportsNotFoundView";
+import ReportList from "../../components/ReportList";
+import ReportListFilters from "../../components/ReportListFilters";
 
 export default class Reports extends Component {
   render() {
@@ -13,6 +15,8 @@ export default class Reports extends Component {
         <BrowserRouter>
           <div>
             <ReportsHeader />
+            <ReportListFilters />
+            <ReportList />
             <Switch>
               <Route path="/reports/create" component={AddReportView} />
               <Route path="/reports/edit/:id" component={EditReportView} />
