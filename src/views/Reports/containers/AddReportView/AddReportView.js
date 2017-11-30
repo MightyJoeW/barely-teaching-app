@@ -1,15 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
+import { addReport } from "../../actions/reports";
 
-class AddReportView extends Component {
-  render() {
-    return (
-      <div>
-        <h1> Add Report </h1>
-        <ReportForm />
-      </div>
-    );
-  }
-}
+const AddReportView = props => (
+  <div>
+    <h1> Add Report </h1>
+    <ReportForm
+      onSubmit={report => {
+        props.dispatch(addReport(report));
+        props.history.push("/reports");
+      }}
+    />
+  </div>
+);
 
-export default AddReportView;
+export default connect()(AddReportView);
