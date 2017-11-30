@@ -8,7 +8,7 @@ const ReportsHeader = () => (
       Reports
     </NavLink>
     <NavLink to="/reports/create" activeClassName="is-active">
-      Add Report
+      Create Report
     </NavLink>
   </header>
 );
