@@ -1,4 +1,4 @@
-import types from "../../core/types";
+import types from "../types";
 
 const initialState = {
   recording: null,
@@ -6,7 +6,7 @@ const initialState = {
   count: 0
 };
 
-export function audioReducer(state = initialState, action) {
+export default function audioReducer(state = initialState, action) {
   switch (action.type) {
     case types.SAVE_RECORDING: {
       const newList = state.list.slice();

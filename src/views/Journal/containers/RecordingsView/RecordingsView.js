@@ -8,7 +8,7 @@ import { withRouter } from "react-router-dom";
 import { styles } from "./styles.scss";
 
 /* actions */
-import * as uiActionCreators from "../../core/actions/actions-ui";
+import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
 
 class RecordingsView extends Component {
   constructor(props) {

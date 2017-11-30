@@ -6,7 +6,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import { withRouter } from "react-router-dom";
 
 /* actions */
-import * as uiActionCreators from "../../core/actions/actions-ui";
+import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
 
 /* component styles */
 import { styles } from "./styles.scss";

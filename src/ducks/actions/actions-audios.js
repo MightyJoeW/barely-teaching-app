@@ -1,8 +1,8 @@
-import types from "../../core/types";
+import types from "../types";
 import {
   storeRecording,
   getAllStoredRecordings
-} from "../../core/libs/lib-cache";
+} from "../../views/Journal/core/libs/lib-cache";
 import uuid from "uuid";
 
 //saveRecording - Save an audio file

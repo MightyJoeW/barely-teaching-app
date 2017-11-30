@@ -10,8 +10,8 @@ import PlayButton from "material-ui/svg-icons/av/play-arrow";
 import PauseButton from "material-ui/svg-icons/av/pause";
 
 /* actions */
-import * as uiActionCreators from "../../core/actions/actions-ui";
-import * as audioActionCreators from "../../core/actions/actions-audios";
+import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
+import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
 
 /* component styles */
 import { styles } from "./styles.scss";
@@ -149,6 +149,7 @@ class DetailsView extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
     ui: state.ui,
     audio: state.audio

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NotFoundView = () => (
+const ReportsNotFoundView = () => (
   <div>
     404 - Page Not Found...feels bad.
-    <Link to="/tasks">Go Home</Link>
+    <Link to="/reports">Return to Reports</Link>
   </div>
 );
 
-export default NotFoundView;
+export default ReportsNotFoundView;
