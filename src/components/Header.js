@@ -17,6 +17,9 @@ const Header = props => (
       <NavLink to="/kidfree" activeClassName="is-active">
         Kid-Free
       </NavLink>
+      <NavLink to="/reports" activeClassName="is-active">
+        Reports
+      </NavLink>
       <NavLink to="/help" activeClassName="is-active">
         Help
       </NavLink>
