@@ -1,4 +1,8 @@
-import { addReport, editReport, removeReport } from "../../actions/reports";
+import {
+  addReport,
+  editReport,
+  removeReport
+} from "../../ducks/actions/reports";
 
 test("should setup remove report action object", () => {
   const action = removeReport({ id: "123abc" });
