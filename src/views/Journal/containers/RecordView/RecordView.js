@@ -14,7 +14,7 @@ import MicrophoneIcon from "material-ui/svg-icons/av/mic";
 import { styles } from "./styles.scss";
 
 //ACTIONS
-import * as audioActionCreators from "../../core/actions/actions-audios";
+import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
 
 class RecordView extends Component {
   constructor(props) {

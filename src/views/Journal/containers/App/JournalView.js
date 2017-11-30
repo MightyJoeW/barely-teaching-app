@@ -18,7 +18,7 @@ import RecordingsView from "../RecordingsView/RecordingsView";
 import DetailsView from "..//DetailsView/DetailsView";
 
 /* actions */
-import * as audioActionCreators from "../../core/actions/actions-audios";
+import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
 
 injectTapEventPlugin();
 OfflinePluginRuntime.install();

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
-import { editReport, removeReport } from "../../actions/reports";
+import { editReport, removeReport } from "../../../../ducks/actions/reports";
 
 const EditReportView = props => {
   return (

@@ -1,11 +1,12 @@
 import { applyMiddleware, createStore, combineReducers } from "redux";
 import reduxThunk from "redux-thunk";
 import { createLogger } from "redux-logger";
-import rootReducer from "../reducers";
 
-//REPORTS
-import reportsReducer from "../../../Reports/reducers/reports";
-import filtersReducer from "../../../Reports/reducers/filters";
+//REDUCERS
+import reports from "../reducers/reports";
+import filters from "../reducers/filters";
+import ui from "../reducers/reducer_ui";
+import audio from "../reducers/reducer_audio";
 
 export default function configureStore(initialState) {
   const logger = createLogger({
@@ -13,15 +14,9 @@ export default function configureStore(initialState) {
     predicate: () => process.env.NODE_ENV === "development"
   });
 
-  const middleware = applyMiddleware(reduxThunk, logger);
-
-  const store = middleware(createStore)(rootReducer, initialState);
-
-  const storeR = createStore(
-    combineReducers({
-      reports: reportsReducer,
-      filters: filtersReducer
-    })
+  let store = createStore(
+    combineReducers({ reports, filters, ui, audio }),
+    applyMiddleware(reduxThunk, logger)
   );
 
   if (module.hot) {

@@ -1,11 +1,16 @@
+import moment from "moment";
+
 // Get visible reports
 export default (reports, { text, sortBy, startDate, endDate }) => {
   return reports
     .filter(report => {
-      const startDateMatch =
-        typeof startDate !== "number" || report.createdAt >= startDate;
-      const endDateMatch =
-        typeof endDate !== "number" || report.createdAt <= endDate;
+      const createdAtMoment = moment(report.createdAt);
+      const startDateMatch = startDate
+        ? startDate.isSameOrBefore(createdAtMoment, "day")
+        : true;
+      const endDateMatch = endDate
+        ? endDate.isSameOrAfter(createdAtMoment, "day")
+        : true;
       const textMatch = report.student_name
         .toLowerCase()
         .includes(text.toLowerCase());

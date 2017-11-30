@@ -7,7 +7,7 @@ import { Drawer, AppBar, Divider } from "material-ui";
 import { styles } from "./styles.scss";
 
 /* actions */
-import * as uiActionCreators from "../../core/actions/actions-ui";
+import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
 
 class LeftNavBar extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class LeftNavBar extends React.Component {
   }
 
   closeNav = () => {
-    this.props.actions.ui.closeNav();
+    this.props.ui.closeNav();
   };
 
   render() {
@@ -23,7 +23,7 @@ class LeftNavBar extends React.Component {
       <div className={styles}>
         <Drawer
           docked={false}
-          open={this.props.ui.leftNavOpen}
+          open={this.props.leftNavOpen}
           onRequestChange={this.closeNav}
         >
           <AppBar title="VentZone" />

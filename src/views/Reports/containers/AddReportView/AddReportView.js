@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
-import { addReport } from "../../actions/reports";
+import { addReport } from "../../../../ducks/actions/reports";
 
 const AddReportView = props => (
   <div>
