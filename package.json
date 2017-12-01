@@ -5,7 +5,6 @@
   "author": "Joe Warren",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
@@ -23,14 +22,9 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.7",
-    "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0",
-    "enzyme-to-json": "^3.2.2",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
-    "jest": "^21.2.1",
     "keymirror": "^0.1.1",
-    "live-server": "^1.2.0",
     "localforage": "^1.5.4",
     "material-ui": "^0.19.4",
     "moment": "^2.19.2",
@@ -49,7 +43,6 @@
     "react-router-dom": "^4.2.2",
     "react-simple-timer": "^1.0.6",
     "react-tap-event-plugin": "^3.0.2",
-    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
@@ -57,7 +50,14 @@
     "style-loader": "^0.19.0",
     "uuid": "^3.1.0",
     "validator": "^9.1.2",
-    "webpack": "^3.8.1",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^16.2.0",
     "webpack-dev-server": "^2.9.4"
   }
 }

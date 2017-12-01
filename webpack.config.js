@@ -7,7 +7,10 @@ module.exports = env => {
   const CSSExtract = new ExtractTextPlugin("styles.css");
   return {
     entry: "./src/app.js",
-    output: { path: path.join(__dirname, "public"), filename: "bundle.js" },
+    output: {
+      path: path.join(__dirname, "public", "dist"),
+      filename: "bundle.js"
+    },
     module: {
       rules: [
         {
@@ -42,7 +45,8 @@ module.exports = env => {
     devtool: isProduction ? "source-map" : "inline-source-map", // setup big file to only load when user opens devtools
     devServer: {
       contentBase: path.join(__dirname, "public"), //tell devServer for all 404 pages to send back html file
-      historyApiFallback: true
+      historyApiFallback: true,
+      publicPath: "/dist/"
     }
   };
 };
