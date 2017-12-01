@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ReportListItem correctly 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/reports/edit/1"
+  >
+    <h3>
+      Jack
+       
+    </h3>
+  </Link>
+  <p>
+    1
+     - 
+    0
+  </p>
+</div>
+`;

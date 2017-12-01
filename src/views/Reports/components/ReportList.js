@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import ReportListItem from "./ReportListItem";
 import selectReports from "../selectors/reports";
 
-const ReportList = props => (
+export const ReportList = props => (
   <div>
-    <h1> Report List </h1>
-    {props.reports.map(report => {
-      return <ReportListItem key={report.id} {...report} />;
-    })}
+    {props.reports.length === 0 ? (
+      <p>No reports</p>
+    ) : (
+      props.reports.map(report => {
+        return <ReportListItem key={report.id} {...report} />;
+      })
+    )}
   </div>
 );
 
