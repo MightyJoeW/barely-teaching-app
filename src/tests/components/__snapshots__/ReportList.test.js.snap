@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ReportList with empty message 1`] = `
+<div>
+  <p>
+    No reports
+  </p>
+</div>
+`;
+
+exports[`should render ReportList with reports 1`] = `
+<div>
+  <ReportListItem
+    createdAt={0}
+    id="1"
+    key="1"
+    note=""
+    period={1}
+    student_name="Jack"
+  />
+  <ReportListItem
+    createdAt={-345600000}
+    id="2"
+    key="2"
+    note=""
+    period={4}
+    student_name="Charlie"
+  />
+  <ReportListItem
+    createdAt={345600000}
+    id="3"
+    key="3"
+    note=""
+    period={3}
+    student_name="Fred"
+  />
+</div>
+`;
