@@ -5,7 +5,7 @@ import { addReport } from "../../../../ducks/actions/reports";
 
 const AddReportView = props => (
   <div>
-    <h1> Add Report </h1>
+    <h1> Add Student Report </h1>
     <ReportForm
       onSubmit={report => {
         props.dispatch(addReport(report));
