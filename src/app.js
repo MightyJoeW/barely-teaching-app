@@ -14,7 +14,6 @@ import getVisibleReports from "./ducks/reducers/reports";
 // const store = configureStoreR();
 
 const store = configureStore();
-
 ReactDOM.render(
   <Provider store={store}>
     <AppRouter />
