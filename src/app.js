@@ -15,14 +15,6 @@ import getVisibleReports from "./ducks/reducers/reports";
 
 const store = configureStore();
 
-store.dispatch(addReport({ student_name: "Jerry Smith", period: 2 }));
-store.dispatch(addReport({ student_name: "Sherman Smith", createdAt: 1000 }));
-store.dispatch(addReport({ student_name: "Ferris", period: 1 }));
-
-const state = store.getState();
-const visibleReports = getVisibleReports(state.reports, state.filters);
-console.log(visibleReports);
-
 ReactDOM.render(
   <Provider store={store}>
     <AppRouter />
