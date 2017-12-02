@@ -27,7 +27,7 @@ export default class ReportForm extends Component {
   };
   onPeriodChange = e => {
     const period = e.target.value;
-    if (period > 0 && period < 10) {
+    if (!period || period.match(/^(?:[1-9]|0[1-9]|10)$/)) {
       this.setState(() => ({ period }));
     }
   };
@@ -50,7 +50,7 @@ export default class ReportForm extends Component {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
         student_name: this.state.student_name,
-        period: parseFloat(this.state.period, 10),
+        period: this.state.period,
         createdAt: this.state.createdAt.valueOf(),
         note: this.state.note
       });
@@ -70,8 +70,8 @@ export default class ReportForm extends Component {
             onChange={this.onStudentNameChange}
           />
           <input
-            type="number"
-            placeholder="Period"
+            type="text"
+            placeholder="Class Period"
             value={this.state.period}
             onChange={this.onPeriodChange}
           />
