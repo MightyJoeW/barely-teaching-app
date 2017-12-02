@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
 
+import "react-dates/initialize";
+
 export default class ReportForm extends Component {
   constructor(props) {
     super(props);
@@ -82,7 +84,7 @@ export default class ReportForm extends Component {
             isOutsideRange={() => false}
           />
           <textarea
-            placeholder="Add a note for your reward or discpline (optional)"
+            placeholder="Add a note for your reward or discpline"
             value={this.state.note}
             onChange={this.onNoteChange}
           />
