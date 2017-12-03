@@ -50,7 +50,7 @@ export default class ReportForm extends Component {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
         student_name: this.state.student_name,
-        period: this.state.period,
+        period: parseFloat(this.state.period, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),
         note: this.state.note
       });

@@ -1,18 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
 import { addReport } from "../../../../ducks/actions/reports";
 
-const AddReportView = props => (
-  <div>
-    <h1> Add Student Report </h1>
-    <ReportForm
-      onSubmit={report => {
-        props.dispatch(addReport(report));
-        props.history.push("/reports");
-      }}
-    />
-  </div>
-);
+export class AddReportView extends Component {
+  onSubmit = report => {
+    this.props.addReport(report);
+    this.props.history.push("/reports");
+  };
+  render() {
+    return (
+      <div>
+        <h1>Add Report</h1>
+        <ReportForm onSubmit={this.onSubmit} />
+      </div>
+    );
+  }
+}
 
-export default connect()(AddReportView);
+const mapDispatchToProps = dispatch => ({
+  addReport: report => dispatch(addReport(report))
+});
+
+export default connect(undefined, mapDispatchToProps)(AddReportView);

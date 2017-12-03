@@ -15,7 +15,7 @@ exports[`should render ReportForm correctly 1`] = `
     <input
       onChange={[Function]}
       placeholder="Class Period"
-      type="number"
+      type="text"
       value=""
     />
     <withStyles(SingleDatePicker)
@@ -122,8 +122,8 @@ exports[`should render ReportForm correctly with report data 1`] = `
     <input
       onChange={[Function]}
       placeholder="Class Period"
-      type="number"
-      value={4}
+      type="text"
+      value="0.04"
     />
     <withStyles(SingleDatePicker)
       anchorDirection="left"
@@ -229,7 +229,7 @@ exports[`should render error for invalid form submission 1`] = `
     <input
       onChange={[Function]}
       placeholder="Class Period"
-      type="number"
+      type="text"
       value=""
     />
     <withStyles(SingleDatePicker)
@@ -339,7 +339,7 @@ exports[`should render error for invalid form submission 2`] = `
     <input
       onChange={[Function]}
       placeholder="Class Period"
-      type="number"
+      type="text"
       value=""
     />
     <withStyles(SingleDatePicker)

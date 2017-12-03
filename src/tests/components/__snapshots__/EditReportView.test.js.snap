@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditReportView 1`] = `
+<div>
+  <ReportForm
+    onSubmit={[Function]}
+    report={
+      Object {
+        "createdAt": 345600000,
+        "id": "3",
+        "note": "",
+        "period": 3,
+        "student_name": "Fred",
+      }
+    }
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;
