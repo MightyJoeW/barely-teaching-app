@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
-import "react-dates/initialize";
 
-const now = moment();
-console.log(now.format("MMM Do, YYYY"));
+import "react-dates/initialize";
 
 export default class ReportForm extends Component {
   constructor(props) {
@@ -30,7 +27,7 @@ export default class ReportForm extends Component {
   };
   onPeriodChange = e => {
     const period = e.target.value;
-    if (period > 0 && period < 10) {
+    if (!period || period.match(/^(?:[1-9]|0[1-9]|10)$/)) {
       this.setState(() => ({ period }));
     }
   };
@@ -53,7 +50,7 @@ export default class ReportForm extends Component {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
         student_name: this.state.student_name,
-        period: parseFloat(this.state.period, 10),
+        period: parseFloat(this.state.period, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),
         note: this.state.note
       });
@@ -73,8 +70,8 @@ export default class ReportForm extends Component {
             onChange={this.onStudentNameChange}
           />
           <input
-            type="number"
-            placeholder="Period"
+            type="text"
+            placeholder="Class Period"
             value={this.state.period}
             onChange={this.onPeriodChange}
           />
@@ -87,7 +84,7 @@ export default class ReportForm extends Component {
             isOutsideRange={() => false}
           />
           <textarea
-            placeholder="Add a note for your reward or discpline (optional)"
+            placeholder="Add a note for your reward or discpline"
             value={this.state.note}
             onChange={this.onNoteChange}
           />

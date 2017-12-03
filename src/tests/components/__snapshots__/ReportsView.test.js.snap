@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ReportsView correctly 1`] = `
+<div>
+  <BrowserRouter>
+    <div>
+      <ReportsHeader />
+      <Connect(ReportListFilters) />
+      <Connect(ReportList) />
+      <Switch>
+        <Route
+          component={[Function]}
+          path="/reports/create"
+        />
+        <Route
+          component={[Function]}
+          path="/reports/edit/:id"
+        />
+      </Switch>
+    </div>
+  </BrowserRouter>
+</div>
+`;
