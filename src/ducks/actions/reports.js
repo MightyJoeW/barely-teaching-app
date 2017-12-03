@@ -8,7 +8,8 @@ export const addReport = report => ({
 });
 
 export const startAddReport = (reportData = {}) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       student_name = "",
       note = "",
@@ -18,7 +19,7 @@ export const startAddReport = (reportData = {}) => {
     const report = { student_name, note, period, createdAt };
 
     return database
-      .ref("reports")
+      .ref(`users/${uid}/reports`)
       .push(report)
       .then(ref => {
         dispatch(
@@ -38,9 +39,10 @@ export const removeReport = ({ id } = {}) => ({
 });
 
 export const startRemoveReport = ({ id } = {}) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref(`reports/${id}`)
+      .ref(`users/${uid}/reports/${id}`)
       .remove()
       .then(() => {
         dispatch(removeReport({ id }));
@@ -56,9 +58,10 @@ export const editReport = (id, updates) => ({
 });
 
 export const startEditReport = (id, updates) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref(`reports/${id}`)
+      .ref(`users/${uid}/reports/${id}`)
       .update(updates)
       .then(() => {
         dispatch(editReport(id, updates));
@@ -73,9 +76,10 @@ export const setReports = reports => ({
 });
 
 export const startSetReports = () => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref("reports")
+      .ref(`users/${uid}/reports`)
       .once("value")
       .then(snapshot => {
         const reports = [];

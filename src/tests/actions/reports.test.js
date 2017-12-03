@@ -13,6 +13,8 @@ import {
 import reports from "../fixtures/reports";
 import database from "../../firebase/firebase";
 
+const uid = "thisismytestuid";
+const defaultAuthState = { auth: { uid } };
 const createMockStore = configureMockStore([thunk]);
 
 beforeEach(done => {
@@ -21,7 +23,7 @@ beforeEach(done => {
     reportsData[id] = { student_name, note, period, createdAt };
   });
   database
-    .ref("reports")
+    .ref(`users/${uid}/reports`)
     .set(reportsData)
     .then(() => done());
 });
@@ -35,7 +37,7 @@ test("should setup remove report action object", () => {
 });
 
 test("should remove report from firebase", done => {
-  const store = createMockStore({});
+  const store = createMockStore(defaultAuthState);
   const id = reports[2].id;
   store
     .dispatch(startRemoveReport({ id }))
@@ -45,7 +47,7 @@ test("should remove report from firebase", done => {
         type: "REMOVE_REPORT",
         id
       });
-      return database.ref(`reports/${id}`).once("value");
+      return database.ref(`users/${uid}/reports/${id}`).once("value");
     })
     .then(snapshot => {
       expect(snapshot.val()).toBeFalsy();
@@ -65,7 +67,7 @@ test("should setup edit report action object", () => {
 });
 
 test("should edit report from firebase", done => {
-  const store = createMockStore({});
+  const store = createMockStore({ defaultAuthState });
   const id = reports[0].id;
   const updates = { period: 8 };
   store
@@ -77,7 +79,7 @@ test("should edit report from firebase", done => {
         id,
         updates
       });
-      return database.ref(`reports/${id}`).once("value");
+      return database.ref(`users/${uid}/reports/${id}`).once("value");
     })
     .then(snapshot => {
       expect(snapshot.val().amount).toBe(updates.amount);
@@ -94,7 +96,7 @@ test("should setup add report action object with provided values", () => {
 });
 
 test("should add report to database and store", done => {
-  const store = createMockStore({});
+  const store = createMockStore({ defaultAuthState });
   const reportData = {
     student_name: "Henry",
     period: 2,
@@ -113,7 +115,9 @@ test("should add report to database and store", done => {
         }
       });
 
-      return database.ref(`reports/${actions[0].report.id}`).once("value");
+      return database
+        .ref(`users/${uid}/reports/${actions[0].report.id}`)
+        .once("value");
     })
     .then(snapshot => {
       expect(snapshot.val()).toEqual(reportData);
@@ -122,7 +126,7 @@ test("should add report to database and store", done => {
 });
 
 test("should add report with defaults to database and store", done => {
-  const store = createMockStore({});
+  const store = createMockStore({ defaultAuthState });
   const reportDefaults = {
     student_name: "",
     period: 0,
@@ -141,7 +145,9 @@ test("should add report with defaults to database and store", done => {
         }
       });
 
-      return database.ref(`reports/${actions[0].report.id}`).once("value");
+      return database
+        .ref(`users/${uid}/reports/${actions[0].report.id}`)
+        .once("value");
     })
     .then(snapshot => {
       expect(snapshot.val()).toEqual(reportDefaults);
@@ -158,7 +164,7 @@ test("should setup set report action object with data", () => {
 });
 
 test("should fetch the reports from firebase", done => {
-  const store = createMockStore({});
+  const store = createMockStore({ defaultAuthState });
   store.dispatch(startSetReports()).then(() => {
     const actions = store.getActions();
     expect(actions[0]).toEqual({

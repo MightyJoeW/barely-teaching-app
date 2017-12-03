@@ -7,6 +7,7 @@ import reports from "../reducers/reports";
 import filters from "../reducers/filters";
 import ui from "../reducers/reducer_ui";
 import audio from "../reducers/reducer_audio";
+import auth from "../reducers/auth";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -21,7 +22,8 @@ export default function configureStore(initialState) {
       reports,
       filters,
       ui,
-      audio
+      audio,
+      auth
     }),
     composeEnhancers(applyMiddleware(thunk, logger))
   );
