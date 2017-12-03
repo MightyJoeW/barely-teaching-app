@@ -3,16 +3,16 @@ import { shallow } from "enzyme";
 import reports from "../fixtures/reports";
 import { EditReportView } from "../../views/Reports/containers/EditReportView/EditReportView";
 
-let editReport, removeReport, history, wrapper;
+let editReport, startRemoveReport, history, wrapper;
 
 beforeEach(() => {
   editReport = jest.fn();
-  removeReport = jest.fn();
+  startRemoveReport = jest.fn();
   history = { push: jest.fn() };
   wrapper = shallow(
     <EditReportView
       editReport={editReport}
-      removeReport={removeReport}
+      startRemoveReport={startRemoveReport}
       history={history}
       report={reports[2]}
     />
@@ -29,10 +29,10 @@ test("should handle editReport", () => {
   expect(editReport).toHaveBeenLastCalledWith(reports[2].id, reports[2]);
 });
 
-test("should handle removeReport", () => {
+test("should handle startRemoveReport", () => {
   wrapper.find("button").simulate("click");
   expect(history.push).toHaveBeenLastCalledWith("/reports");
-  expect(removeReport).toHaveBeenLastCalledWith({
+  expect(startRemoveReport).toHaveBeenLastCalledWith({
     id: reports[2].id
   });
 });

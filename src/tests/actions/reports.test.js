@@ -5,6 +5,7 @@ import {
   addReport,
   editReport,
   removeReport,
+  startRemoveReport,
   setReports,
   startSetReports
 } from "../../ducks/actions/reports";
@@ -30,6 +31,25 @@ test("should setup remove report action object", () => {
     type: "REMOVE_REPORT",
     id: "123abc"
   });
+});
+
+test("should remove report from firebase", done => {
+  const store = createMockStore({});
+  const id = reports[2].id;
+  store
+    .dispatch(startRemoveReport({ id }))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "REMOVE_REPORT",
+        id
+      });
+      return database.ref(`reports/${id}`).once("value");
+    })
+    .then(snapshot => {
+      expect(snapshot.val()).toBeFalsy();
+      done();
+    });
 });
 
 test("should setup edit report action object", () => {

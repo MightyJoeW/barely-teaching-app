@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
-import { editReport, removeReport } from "../../../../ducks/actions/reports";
+import {
+  editReport,
+  startRemoveReport
+} from "../../../../ducks/actions/reports";
 
 export class EditReportView extends Component {
   onSubmit = report => {
@@ -9,7 +12,7 @@ export class EditReportView extends Component {
     this.props.history.push("/reports");
   };
   onRemove = () => {
-    this.props.removeReport({ id: this.props.report.id });
+    this.props.startRemoveReport({ id: this.props.report.id });
     this.props.history.push("/reports");
   };
   render() {
@@ -28,7 +31,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = (dispatch, props) => ({
   editReport: (id, report) => dispatch(editReport(id, report)),
-  removeReport: data => dispatch(removeReport(data))
+  startRemoveReport: data => dispatch(startRemoveReport(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditReportView);

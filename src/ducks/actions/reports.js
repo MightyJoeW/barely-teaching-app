@@ -37,6 +37,17 @@ export const removeReport = ({ id } = {}) => ({
   id
 });
 
+export const startRemoveReport = ({ id } = {}) => {
+  return dispatch => {
+    return database
+      .ref(`reports/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removeReport({ id }));
+      });
+  };
+};
+
 // EDIT_REPORT
 export const editReport = (id, updates) => ({
   type: "EDIT_REPORT",
