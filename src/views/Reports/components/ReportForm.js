@@ -11,7 +11,7 @@ export default class ReportForm extends Component {
     this.state = {
       student_name: props.report ? props.report.student_name : "",
       note: props.report ? props.report.note : "",
-      period: props.report ? (props.report.period / 100).toString() : "",
+      period: props.report ? props.report.period.toString() : "",
       createdAt: props.report ? moment(props.report.createdAt) : moment(),
       calendarFocused: false,
       error: ""
@@ -50,7 +50,7 @@ export default class ReportForm extends Component {
       this.setState(() => ({ error: "" }));
       this.props.onSubmit({
         student_name: this.state.student_name,
-        period: parseFloat(this.state.period, 10) * 100,
+        period: parseFloat(this.state.period, 10),
         createdAt: this.state.createdAt.valueOf(),
         note: this.state.note
       });

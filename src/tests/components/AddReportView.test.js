@@ -3,12 +3,14 @@ import { shallow } from "enzyme";
 import { AddReportView } from "../../views/Reports/containers/AddReportView/AddReportView";
 import reports from "../fixtures/reports";
 
-let addReport, history, wrapper;
+let startAddReport, history, wrapper;
 
 beforeEach(() => {
-  addReport = jest.fn();
+  startAddReport = jest.fn();
   history = { push: jest.fn() };
-  wrapper = shallow(<AddReportView addReport={addReport} history={history} />);
+  wrapper = shallow(
+    <AddReportView startAddReport={startAddReport} history={history} />
+  );
 });
 
 test("should render AddReportView correctly", () => {
@@ -18,5 +20,5 @@ test("should render AddReportView correctly", () => {
 test("should handle onSubmit", () => {
   wrapper.find("ReportForm").prop("onSubmit")(reports[1]);
   expect(history.push).toHaveBeenLastCalledWith("/reports");
-  expect(addReport).toHaveBeenLastCalledWith(reports[1]);
+  expect(startAddReport).toHaveBeenLastCalledWith(reports[1]);
 });

@@ -1,18 +1,35 @@
 import uuid from "uuid";
+import database from "../../firebase/firebase";
 
 // ADD_REPORT
-export const addReport = (
-  { student_name = "", note = "", period = 0, createdAt = 0 } = {}
-) => ({
+export const addReport = report => ({
   type: "ADD_REPORT",
-  report: {
-    id: uuid(),
-    student_name,
-    note,
-    period,
-    createdAt
-  }
+  report
 });
+
+export const startAddReport = (reportData = {}) => {
+  return dispatch => {
+    const {
+      student_name = "",
+      note = "",
+      period = 0,
+      createdAt = 0
+    } = reportData;
+    const report = { student_name, note, period, createdAt };
+
+    return database
+      .ref("reports")
+      .push(report)
+      .then(ref => {
+        dispatch(
+          addReport({
+            id: ref.key,
+            ...report
+          })
+        );
+      });
+  };
+};
 
 // REMOVE_REPORT
 export const removeReport = ({ id } = {}) => ({
