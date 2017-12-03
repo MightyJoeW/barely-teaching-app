@@ -4,7 +4,7 @@ import AppRouter, { history } from "./routers/AppRouter";
 import { Provider } from "react-redux";
 import configureStore from "./ducks/store/configureStore";
 import { startSetReports } from "./ducks/actions/reports";
-import { setTextFilter } from "./ducks/actions/filters";
+import { login, logout } from "./ducks/actions/auth";
 import getVisibleReports from "./ducks/reducers/reports";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
@@ -31,6 +31,7 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
+    store.dispatch(login(user.uid));
     store.dispatch(startSetReports()).then(() => {
       renderApp();
       if (history.location.pathname === "/") {
@@ -38,6 +39,7 @@ firebase.auth().onAuthStateChanged(user => {
       }
     });
   } else {
+    store.dispatch(logout());
     renderApp();
     history.push("/");
   }
