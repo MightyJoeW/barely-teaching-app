@@ -4,12 +4,25 @@ import {
   startAddReport,
   addReport,
   editReport,
-  removeReport
+  removeReport,
+  setReports,
+  startSetReports
 } from "../../ducks/actions/reports";
 import reports from "../fixtures/reports";
 import database from "../../firebase/firebase";
 
 const createMockStore = configureMockStore([thunk]);
+
+beforeEach(done => {
+  const reportsData = {};
+  reports.forEach(({ id, student_name, note, period, createdAt }) => {
+    reportsData[id] = { student_name, note, period, createdAt };
+  });
+  database
+    .ref("reports")
+    .set(reportsData)
+    .then(() => done());
+});
 
 test("should setup remove report action object", () => {
   const action = removeReport({ id: "123abc" });
@@ -93,16 +106,22 @@ test("should add report with defaults to database and store", done => {
     });
 });
 
-// test("should setup add report action object with default values", () => {
-//   const action = startAddReport();
-//   expect(action).toEqual({
-//     type: "ADD_REPORT",
-//     report: {
-//       id: expect.any(String),
-//       student_name: "",
-//       note: "",
-//       period: 0,
-//       createdAt: 0
-//     }
-//   });
-// });
+test("should setup set report action object with data", () => {
+  const action = setReports(reports);
+  expect(action).toEqual({
+    type: "SET_REPORTS",
+    reports
+  });
+});
+
+test("should fetch the reports from firebase", done => {
+  const store = createMockStore({});
+  store.dispatch(startSetReports()).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: "SET_REPORTS",
+      reports
+    });
+    done();
+  });
+});

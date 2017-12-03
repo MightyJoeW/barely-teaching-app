@@ -65,3 +65,12 @@ test("should not edit a report if id not found", () => {
   const state = reportsReducer(reports, action);
   expect(state).toEqual(reports);
 });
+
+test("should set reports", () => {
+  const action = {
+    type: "SET_REPORTS",
+    reports: [reports[1]]
+  };
+  const state = reportsReducer(reports, action);
+  expect(state).toEqual([reports[1]]);
+});

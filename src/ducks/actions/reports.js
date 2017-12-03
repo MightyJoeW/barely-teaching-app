@@ -43,3 +43,29 @@ export const editReport = (id, updates) => ({
   id,
   updates
 });
+
+// SET_REPORTS
+export const setReports = reports => ({
+  type: "SET_REPORTS",
+  reports
+});
+
+export const startSetReports = () => {
+  return dispatch => {
+    return database
+      .ref("reports")
+      .once("value")
+      .then(snapshot => {
+        const reports = [];
+
+        snapshot.forEach(childSnapshot => {
+          reports.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val()
+          });
+        });
+
+        dispatch(setReports(reports));
+      });
+  };
+};

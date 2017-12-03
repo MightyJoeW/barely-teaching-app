@@ -16,6 +16,8 @@ export default (state = reportsReducerDefaultState, action) => {
           return report;
         }
       });
+    case "SET_REPORTS":
+      return action.reports;
     default:
       return state;
   }

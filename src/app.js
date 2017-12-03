@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import AppRouter from "./routers/AppRouter";
 import { Provider } from "react-redux";
 import configureStore from "./ducks/store/configureStore";
-import { addReport } from "./ducks/actions/reports";
+import { startSetReports } from "./ducks/actions/reports";
 import { setTextFilter } from "./ducks/actions/filters";
 import getVisibleReports from "./ducks/reducers/reports";
 import "normalize.css/normalize.css";
@@ -12,9 +12,14 @@ import "react-dates/lib/css/_datepicker.css";
 import "./firebase/firebase";
 
 const store = configureStore();
-ReactDOM.render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>,
-  document.getElementById("app")
-);
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+
+store.dispatch(startSetReports()).then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>,
+    document.getElementById("app")
+  );
+});
