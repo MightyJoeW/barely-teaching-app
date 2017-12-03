@@ -75,8 +75,6 @@ export default class BarelyTeachingApp extends React.Component {
   }
 
   render() {
-    const subtitle = `The #1 companion for jaded teachers`;
-
     return (
       <div>
         <div className="container">

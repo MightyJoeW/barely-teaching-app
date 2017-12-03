@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="header__title"
+    >
+       Barely Teaching 
+    </h1>
+    <h2
+      className="header__subtitle"
+    >
+      The #1 companion for jaded teachers
+    </h2>
+    <NavLink
+      activeClassName="is-active"
+      ariaCurrent="true"
+      exact={true}
+      to="/tasks"
+    >
+      Tasks
+    </NavLink>
+    <NavLink
+      activeClassName="is-active"
+      ariaCurrent="true"
+      to="/journal"
+    >
+      Journal
+    </NavLink>
+    <NavLink
+      activeClassName="is-active"
+      ariaCurrent="true"
+      to="/kidfree"
+    >
+      Kid-Free
+    </NavLink>
+    <NavLink
+      activeClassName="is-active"
+      ariaCurrent="true"
+      to="/reports"
+    >
+      Reports
+    </NavLink>
+    <NavLink
+      activeClassName="is-active"
+      ariaCurrent="true"
+      to="/help"
+    >
+      Help
+    </NavLink>
+    <button
+      onClick={[Function]}
+    >
+       Logout 
+    </button>
+  </div>
+</div>
+`;

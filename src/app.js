@@ -28,6 +28,6 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     console.log("logged in");
   } else {
-    console.log("log out");
+    console.log("logged out");
   }
 });
