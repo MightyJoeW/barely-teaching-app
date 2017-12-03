@@ -8,7 +8,8 @@ export const addReport = report => ({
 });
 
 export const startAddReport = (reportData = {}) => {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       student_name = "",
       note = "",
@@ -18,7 +19,7 @@ export const startAddReport = (reportData = {}) => {
     const report = { student_name, note, period, createdAt };
 
     return database
-      .ref("reports")
+      .ref(`users/${uid}/reports`)
       .push(report)
       .then(ref => {
         dispatch(

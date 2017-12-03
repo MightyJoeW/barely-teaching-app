@@ -1,28 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppRouter, { history } from "./routers/AppRouter";
 import { Provider } from "react-redux";
+import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./ducks/store/configureStore";
 import { startSetReports } from "./ducks/actions/reports";
 import { login, logout } from "./ducks/actions/auth";
-import getVisibleReports from "./ducks/reducers/reports";
+import getVisibleReports from "./views/Reports/selectors/reports";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import "react-dates/lib/css/_datepicker.css";
 import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
 
 let hasRendered = false;
-
 const renderApp = () => {
   if (!hasRendered) {
-    ReactDOM.render(
-      <Provider store={store}>
-        <AppRouter />
-      </Provider>,
-      document.getElementById("app")
-    );
+    ReactDOM.render(jsx, document.getElementById("app"));
     hasRendered = true;
   }
 };
