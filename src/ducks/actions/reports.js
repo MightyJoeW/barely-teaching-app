@@ -55,6 +55,17 @@ export const editReport = (id, updates) => ({
   updates
 });
 
+export const startEditReport = (id, updates) => {
+  return dispatch => {
+    return database
+      .ref(`reports/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editReport(id, updates));
+      });
+  };
+};
+
 // SET_REPORTS
 export const setReports = reports => ({
   type: "SET_REPORTS",
