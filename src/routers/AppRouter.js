@@ -8,7 +8,7 @@ import HelpView from "../views/HelpView";
 import JournalHeader from "../views/Journal/containers/JournalHeader/JournalHeader";
 import JournalView from "../views/Journal/containers/App/JournalView";
 import KidFreeView from "../views//Kidfree/containers/App/KidFreeView";
-import LandingView from "../views/LandingView";
+import LoginView from "../views/LoginView/LoginView";
 import NotFoundView from "../views/NotFoundView";
 import RecordView from "../views/Journal/containers/RecordView/RecordView";
 import RecordingsView from "../views/Journal/containers/RecordingsView/RecordingsView";
@@ -21,7 +21,7 @@ const AppRouter = () => (
     <div>
       <Header subtitle={subtitle} />
       <Switch>
-        <Route exact path="/" component={LandingView} />
+        <Route exact path="/" component={LoginView} />
         <Route path="/tasks" component={BarelyTeachingApp} />
         <Route path="/journal" component={JournalView} />
         <Route path="/kidfree" component={KidFreeView} />
