@@ -4,6 +4,7 @@ import {
   startAddReport,
   addReport,
   editReport,
+  startEditReport,
   removeReport,
   startRemoveReport,
   setReports,
@@ -62,6 +63,28 @@ test("should setup edit report action object", () => {
     }
   });
 });
+
+test("should edit report from firebase", done => {
+  const store = createMockStore({});
+  const id = reports[0].id;
+  const updates = { period: 8 };
+  store
+    .dispatch(startEditReport(id, updates))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "EDIT_REPORT",
+        id,
+        updates
+      });
+      return database.ref(`reports/${id}`).once("value");
+    })
+    .then(snapshot => {
+      expect(snapshot.val().amount).toBe(updates.amount);
+      done();
+    });
+});
+
 test("should setup add report action object with provided values", () => {
   const action = addReport(reports[2]);
   expect(action).toEqual({
