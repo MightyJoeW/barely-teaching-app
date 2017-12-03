@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppRouter from "./routers/AppRouter";
+import AppRouter, { history } from "./routers/AppRouter";
 import { Provider } from "react-redux";
 import configureStore from "./ducks/store/configureStore";
 import { startSetReports } from "./ducks/actions/reports";
@@ -13,21 +13,32 @@ import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+let hasRendered = false;
 
-store.dispatch(startSetReports()).then(() => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <AppRouter />
-    </Provider>,
-    document.getElementById("app")
-  );
-});
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>,
+      document.getElementById("app")
+    );
+    hasRendered = true;
+  }
+};
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    console.log("logged in");
+    store.dispatch(startSetReports()).then(() => {
+      renderApp();
+      if (history.location.pathname === "/") {
+        history.push("/tasks");
+      }
+    });
   } else {
-    console.log("logged out");
+    renderApp();
+    history.push("/");
   }
 });

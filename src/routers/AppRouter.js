@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
 
 //COMPONENTS
 import BarelyTeachingApp from "./../components/BarelyTeachingApp";
@@ -14,10 +15,12 @@ import RecordView from "../views/Journal/containers/RecordView/RecordView";
 import RecordingsView from "../views/Journal/containers/RecordingsView/RecordingsView";
 import ReportsView from "../views/Reports/containers/App/ReportsView";
 
+export const history = createHistory();
+
 const subtitle = `The #1 companion for jaded teachers`;
 
 const AppRouter = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <div>
       <Header subtitle={subtitle} />
       <Switch>
@@ -30,7 +33,7 @@ const AppRouter = () => (
         <Route component={NotFoundView} />
       </Switch>
     </div>
-  </BrowserRouter>
+  </Router>
 );
 
 export default AppRouter;
