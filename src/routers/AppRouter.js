@@ -22,7 +22,7 @@ const AppRouter = () => (
         <PublicRoute path="/" component={LoginView} exact={true} />
         <PrivateRoute path="/tasks" component={BarelyTeachingApp} />
         <PrivateRoute path="/journal" component={JournalView} />
-        <PrivateRoute path="/kidfree" component={KidFreeView} />
+        {/* <PrivateRoute path="/kidfree" component={KidFreeView} /> */}
         <PrivateRoute path="/reports" component={ReportsView} />
         <PrivateRoute path="/help" component={HelpView} />
         <Route component={NotFoundView} />

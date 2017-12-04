@@ -1,7 +1,7 @@
 .list-header {
-  background: $whitish;
+  background: $light-blue;
   border: 1px solid darken($whitish, 7%);
-  color: $grey;
+  color: $off-white;
   display: flex;
   justify-content: space-between;
   padding: $s-size $m-size;
@@ -17,7 +17,7 @@
 .list-item {
   border: 1px solid darken($whitish, 7%);
   border-top: none;
-  color: $dark-grey;
+  color: #fff;
   display: flex;
   flex-direction: column;
   padding: $s-size;
