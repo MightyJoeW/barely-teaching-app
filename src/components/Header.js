@@ -27,7 +27,7 @@ export const Header = ({ startLogout }) => (
           to="/journal"
           activeClassName="is-active"
         >
-          Journal
+          Voice Memos
         </NavLink>
         {/* <NavLink
           className="header__nav"
