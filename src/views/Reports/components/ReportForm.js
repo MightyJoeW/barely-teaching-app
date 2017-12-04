@@ -63,6 +63,7 @@ export default class ReportForm extends Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <input
+            className="text-input"
             type="text"
             placeholder="Student Name"
             autoFocus
@@ -70,6 +71,7 @@ export default class ReportForm extends Component {
             onChange={this.onStudentNameChange}
           />
           <input
+            className="text-input"
             type="text"
             placeholder="Class Period"
             value={this.state.period}
@@ -84,6 +86,7 @@ export default class ReportForm extends Component {
             isOutsideRange={() => false}
           />
           <textarea
+            className="textarea"
             placeholder="Add a note for your reward or discpline"
             value={this.state.note}
             onChange={this.onNoteChange}
