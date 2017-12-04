@@ -33,6 +33,20 @@
   padding: 0;
 }
 
+.logout-button {
+  background: none;
+  border: none;
+  padding: 0;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+}
+
 @media (min-width: $desktop-breakpoint) {
   .big-button {
     margin-bottom: $xl-size;

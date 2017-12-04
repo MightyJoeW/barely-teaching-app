@@ -5,6 +5,18 @@
   padding: $m-size 0;
 }
 
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .header__title {
   font-size: $l-size;
   margin: 0;
@@ -15,6 +27,11 @@
   font-size: $m-size;
   font-weight: 500;
   margin: 0;
+}
+
+.header__nav {
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (min-width: $desktop-breakpoint) {

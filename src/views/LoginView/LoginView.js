@@ -7,7 +7,9 @@ export const LoginView = ({ startLogin }) => (
     <div className="box-layout__box">
       <h1 className="box-layout__title">Barely Teaching</h1>
       <p>The app to get you organized...or not.</p>
-      <button onClick={startLogin}>Login</button>
+      <button className="login-button" onClick={startLogin}>
+        Login with Google
+      </button>
     </div>
   </div>
 );

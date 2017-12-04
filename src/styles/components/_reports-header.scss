@@ -1,0 +1,18 @@
+.reports-header {
+  background: $blackish;
+  margin-bottom: $l-size;
+  padding: $l-size 0;
+}
+
+.reports-header__actions {
+  margin-top: $m-size;
+}
+
+.reports-header__title {
+  color: $baby-blue;
+  text-decoration: none;
+  h1 {
+    margin: 0;
+    font-weight: 300;
+  }
+}
