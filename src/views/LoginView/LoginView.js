@@ -3,9 +3,12 @@ import { connect } from "react-redux";
 import { startLogin } from "../../ducks/actions/auth";
 
 export const LoginView = ({ startLogin }) => (
-  <div>
-    <h1>Login Page View</h1>
-    <button onClick={startLogin}>Login</button>
+  <div className="box-layout">
+    <div className="box-layout__box">
+      <h1 className="box-layout__title">Barely Teaching</h1>
+      <p>The app to get you organized...or not.</p>
+      <button onClick={startLogin}>Login</button>
+    </div>
   </div>
 );
 
