@@ -2,14 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import ReportListItem from "./ReportListItem";
 import selectReports from "../selectors/reports";
+import ReportsHeader from "../containers/ReportsHeader/ReportsHeader";
+import ReportListFilters from "../components/ReportListFilters";
 
 export const ReportList = props => (
   <div className="content-container">
+    <ReportsHeader />
+    <ReportListFilters />
     <div className="list-header">
       <div className="show-for-mobile">Students</div>
       <div className="show-for-desktop">Student</div>
       <div className="show-for-desktop">Period</div>
     </div>
+
     <div className="list-body">
       {props.reports.length === 0 ? (
         <div className="list-item list-item--message">

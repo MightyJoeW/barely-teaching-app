@@ -14,10 +14,11 @@ export default class Reports extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <ReportsHeader />
-            <ReportListFilters />
-            <ReportList />
+            {
+              // <ReportList />
+            }
             <Switch>
+              <Route exact path="/reports" component={ReportList} />
               <Route path="/reports/create" component={AddReportView} />
               <Route path="/reports/edit/:id" component={EditReportView} />
               {/* <Route component={ReportsNotFoundView} /> */}
