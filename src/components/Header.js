@@ -29,13 +29,13 @@ export const Header = ({ startLogout }) => (
         >
           Journal
         </NavLink>
-        <NavLink
+        {/* <NavLink
           className="header__nav"
           to="/kidfree"
           activeClassName="is-active"
         >
           Kid-Free
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className="header__nav"
           to="/reports"
