@@ -7,56 +7,70 @@ exports[`should render Header correctly 1`] = `
   <div
     className="container"
   >
-    <h1
-      className="header__title"
+    <div
+      className="header-container"
     >
-       Barely Teaching 
-    </h1>
+      <h1
+        className="header__title"
+      >
+         Barely Teaching 
+      </h1>
+      <button
+        className="logout-button"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </div>
     <h2
       className="header__subtitle"
     >
       The #1 companion for jaded teachers
     </h2>
-    <NavLink
-      activeClassName="is-active"
-      ariaCurrent="true"
-      to="/tasks"
+    <div
+      className="header__content"
     >
-      Tasks
-    </NavLink>
-    <NavLink
-      activeClassName="is-active"
-      ariaCurrent="true"
-      to="/journal"
-    >
-      Journal
-    </NavLink>
-    <NavLink
-      activeClassName="is-active"
-      ariaCurrent="true"
-      to="/kidfree"
-    >
-      Kid-Free
-    </NavLink>
-    <NavLink
-      activeClassName="is-active"
-      ariaCurrent="true"
-      to="/reports"
-    >
-      Reports
-    </NavLink>
-    <NavLink
-      activeClassName="is-active"
-      ariaCurrent="true"
-      to="/help"
-    >
-      Help
-    </NavLink>
-    <button
-      onClick={[Function]}
-    >
-       Logout 
-    </button>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="header__nav"
+        to="/tasks"
+      >
+        Tasks
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="header__nav"
+        to="/journal"
+      >
+        Journal
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="header__nav"
+        to="/kidfree"
+      >
+        Kid-Free
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="header__nav"
+        to="/reports"
+      >
+        Reports
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="header__nav"
+        to="/help"
+      >
+        Help
+      </NavLink>
+    </div>
   </div>
 </div>
 `;

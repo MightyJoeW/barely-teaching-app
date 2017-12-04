@@ -5,7 +5,9 @@
   height: 90px;
   width: 100%;
   z-index: 1;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
+  max-width: 60rem;
+  margin: 0 auto;
 
   h1 {
     font-size: 20px !important;

@@ -1,12 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should correctly render LoginView 1`] = `
-<div>
-  <h1>
-    Login Page View
-  </h1>
-  <button>
-    Login
-  </button>
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
+  >
+    <h1
+      className="box-layout__title"
+    >
+      Barely Teaching
+    </h1>
+    <p>
+      The app to get you organized...or not.
+    </p>
+    <button
+      className="login-button"
+    >
+      Login with Google
+    </button>
+  </div>
 </div>
 `;
