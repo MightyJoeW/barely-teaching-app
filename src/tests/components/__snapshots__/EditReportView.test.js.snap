@@ -2,22 +2,40 @@
 
 exports[`should render EditReportView 1`] = `
 <div>
-  <ReportForm
-    onSubmit={[Function]}
-    report={
-      Object {
-        "createdAt": 345600000,
-        "id": "3",
-        "note": "",
-        "period": 3,
-        "student_name": "Fred",
-      }
-    }
-  />
-  <button
-    onClick={[Function]}
+  <div
+    className="reports-header"
   >
-    Remove
-  </button>
+    <div
+      className="content-container"
+    >
+      <h1
+        className="reports-header__title"
+      >
+         Edit Report 
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <ReportForm
+      onSubmit={[Function]}
+      report={
+        Object {
+          "createdAt": 345600000,
+          "id": "3",
+          "note": "",
+          "period": 3,
+          "student_name": "Fred",
+        }
+      }
+    />
+    <button
+      className="login-button button--secondary"
+      onClick={[Function]}
+    >
+      Remove Report
+    </button>
+  </div>
 </div>
 `;
