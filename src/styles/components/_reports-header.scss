@@ -2,17 +2,21 @@
   background: $light-blue;
   margin-bottom: $l-size;
   padding: $l-size 0;
+  border-radius: 9px;
 }
 
 .reports-header__actions {
   margin-top: $m-size;
+  margin-left: $l-size;
 }
 
 .reports-header__title {
   color: #fff;
   text-decoration: none;
+
   h1 {
     margin: 0;
+    margin-left: $l-size;
     font-weight: 300;
   }
 }

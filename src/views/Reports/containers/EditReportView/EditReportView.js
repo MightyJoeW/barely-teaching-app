@@ -18,7 +18,7 @@ export class EditReportView extends Component {
   render() {
     return (
       <div>
-        <div className="reports-header">
+        <div className="">
           <div className="content-container">
             <h1 className="reports-header__title"> Edit Report </h1>
           </div>
