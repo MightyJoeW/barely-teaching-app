@@ -13,7 +13,7 @@ export const Header = ({ startLogout }) => (
         </button>
       </div>
 
-      <h2 className="header__subtitle">The #1 companion for jaded teachers</h2>
+      <h2 className="header__subtitle">The #1 App for Teachers After Hours</h2>
       <div className="header__content">
         <NavLink
           className="header__nav"

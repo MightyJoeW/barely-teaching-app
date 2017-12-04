@@ -11,7 +11,7 @@ export class AddReportView extends Component {
   render() {
     return (
       <div>
-        <div className="reports-header">
+        <div className="">
           <div className="content-container">
             <h1 className="reports-header__title">Add Report</h1>
           </div>
