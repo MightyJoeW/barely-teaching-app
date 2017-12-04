@@ -1,5 +1,4 @@
 @import "../../containers/App/styles/variables.scss";
-
 :local(.styles) {
   .tabs {
     position: relative;
@@ -8,6 +7,9 @@
   }
 
   .tabs > div:first-child {
+    margin-top: 6rem;
+    border-radius: 5px;
+    height: 9rem;
     background-color: $darkGrey !important;
     button {
       color: $lightBlue !important;
