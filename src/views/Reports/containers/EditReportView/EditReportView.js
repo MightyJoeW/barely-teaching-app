@@ -18,8 +18,20 @@ export class EditReportView extends Component {
   render() {
     return (
       <div>
-        <ReportForm report={this.props.report} onSubmit={this.onSubmit} />
-        <button onClick={this.onRemove}>Remove</button>
+        <div className="reports-header">
+          <div className="content-container">
+            <h1 className="reports-header__title"> Edit Report </h1>
+          </div>
+        </div>
+        <div className="content-container">
+          <ReportForm report={this.props.report} onSubmit={this.onSubmit} />
+          <button
+            className="login-button button--secondary"
+            onClick={this.onRemove}
+          >
+            Remove Report
+          </button>
+        </div>
       </div>
     );
   }

@@ -59,41 +59,41 @@ export default class ReportForm extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-          <input
-            className="text-input"
-            type="text"
-            placeholder="Student Name"
-            autoFocus
-            value={this.state.student_name}
-            onChange={this.onStudentNameChange}
-          />
-          <input
-            className="text-input"
-            type="text"
-            placeholder="Class Period"
-            value={this.state.period}
-            onChange={this.onPeriodChange}
-          />
-          <SingleDatePicker
-            date={this.state.createdAt}
-            onDateChange={this.onDateChange}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.onFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
-          <textarea
-            className="textarea"
-            placeholder="Add a note for your reward or discpline"
-            value={this.state.note}
-            onChange={this.onNoteChange}
-          />
-          <button>Add Report</button>
-        </form>
-      </div>
+      <form className="form" onSubmit={this.onSubmit}>
+        {this.state.error && <p className="form__error">{this.state.error}</p>}
+        <input
+          className="text-input"
+          type="text"
+          placeholder="Student Name"
+          autoFocus
+          value={this.state.student_name}
+          onChange={this.onStudentNameChange}
+        />
+        <input
+          className="text-input"
+          type="text"
+          placeholder="Class Period"
+          value={this.state.period}
+          onChange={this.onPeriodChange}
+        />
+        <SingleDatePicker
+          date={this.state.createdAt}
+          onDateChange={this.onDateChange}
+          focused={this.state.calendarFocused}
+          onFocusChange={this.onFocusChange}
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
+        <textarea
+          className="textarea"
+          placeholder="Add a note for your reward or discpline"
+          value={this.state.note}
+          onChange={this.onNoteChange}
+        />
+        <div>
+          <button className="login-button">Save Report</button>
+        </div>
+      </form>
     );
   }
 }
