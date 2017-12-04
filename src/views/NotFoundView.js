@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NotFoundView = () => (
-  <div>
+  <div className="content-container">
     404 - Page Not Found...feels bad.
-    <Link to="/tasks">Go Home</Link>
+    <br />
+    <br />
+    <Link className="header__nav" to="/tasks">
+      Go Home
+    </Link>
   </div>
 );
 

@@ -23,7 +23,7 @@ class JournalHeader extends React.Component {
   render() {
     return (
       <div className={styles}>
-        <AppBar onLeftIconButtonTouchTap={this.handleToggle} />
+        {/*<AppBar onLeftIconButtonTouchTap={this.handleToggle} />*/}
         <Navigation />
       </div>
     );
