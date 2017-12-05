@@ -4,11 +4,11 @@ const HelpView = () => (
   <div className="help-body">
     <h2>Frequently Asked Questions</h2>
 
-    <div className="question">What is the Journal page for?</div>
+    <div className="question">What is the Voice Memos page for?</div>
     <div className="answer">
-      On the journal page, you can record your own, personal voice memos.
-      Whether you want to record ideas for the future or vent about how annoying
-      your kids were, the choice is yours.
+      On the Voice Memos page, you can record and save your own, personal voice
+      recordings. Whether you want to record ideas for the future or vent about
+      how annoying your kids were, the choice is yours.
     </div>
     <br />
     <div className="question">What do I do on the Reports page?</div>
