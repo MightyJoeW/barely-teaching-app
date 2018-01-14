@@ -2,7 +2,7 @@
 ## The #1 App for Teachers After Hours
 
 <img src="https://lh3.googleusercontent.com/4thmQj7mstLtc_I8vz2-WFSL2NO2JBlQetnDNoPQE5vCnvOtU2ANe_HrvheGEqWMpnfueOkLioREClX9cjiaDP4Rx5h6jMMdXtwzb4YZaAuQyemcA9DfYRc3gBr1giUAaMpZsAZYrMv3Fwy_qj4Yp3cqMwu2Scs2TgfyiRzDEz8H2NMPaT33Or5NTZcr4H69Z62gf1lNOLl8l4yJiGVs0SeTFradDOSPIJQFC8Q9r91BFPuIMh40xj26BaVXg8JePKCMkcWg-LZkxSGMIuPyxZGJrxzlh7rwc_rea6zqE4KA-9bPGb2QJeneXlWsMALeP6mCYL8DMB5hqThRtW3ColZO9B26VuIxa5N4Rtu2xAOEkYIoEZjn7ZWmwzyyRZIN6xr6IGmiNqIqECSxb6RhCNCqiy1nCuDFcPWRpetlHrw76Mt0jb3pTws900EbEFH7N2puIACRTcvRi4Y-mKWCfY6kbeyoH1n-DhtGjnGjNlumZy2plRh-8iCL3AZuip6PTBYAyzaGf6DRjWz1Hj7nuQxLbqTl_PCa4W6ljKX7w3fLrF5kto9XsQv5nUfpjqQCNJsgd3zV5el3x_Bb0KbPLDiZc9Q0SL32eFxKC5Ca=w2868-h1323-no">
-<a href="barely-teaching-app.herokuapp.com">Live Demo </a>
+<a href="https://barely-teaching-app.herokuapp.com/">Live Demo </a>
 <br />
 
 Barely Teaching is a fully-responsive web app designed for teachers in need of a place to plan, organize, and vent. Features include creating and randomly selecting tasks from a list, recording and listening to voice memos, and adding student reports.
