@@ -37,7 +37,7 @@ class RecordingsView extends Component {
         <li key={`recording-${index}`}>
           <RecordedItem
             item={recordedItem}
-            onTouchTap={this.goToRecording.bind(null, recordedItem.id)}
+            onClick={this.goToRecording.bind(null, recordedItem.id)}
           />
         </li>
       );

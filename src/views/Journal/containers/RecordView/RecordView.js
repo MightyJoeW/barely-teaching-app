@@ -65,7 +65,7 @@ class RecordView extends Component {
           <Button
             className="secondary delete"
             iconOnly={true}
-            onTouchTap={this.deleteRecording}
+            onClick={this.deleteRecording}
             icon={<DeleteIcon />}
           />
           <Button
@@ -78,7 +78,7 @@ class RecordView extends Component {
           <Button
             className="secondary save"
             iconOnly={true}
-            onTouchTap={this.saveRecording}
+            onClick={this.saveRecording}
             icon={<DoneIcon />}
           />
         </div>
@@ -90,7 +90,7 @@ class RecordView extends Component {
           secondary={true}
           raised={true}
           floating={true}
-          onTouchTap={this.startRecording}
+          onClick={this.startRecording}
           icon={<MicrophoneIcon />}
         />
       );

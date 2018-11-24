@@ -21,7 +21,7 @@ function createButton(props) {
   const {
     label,
     className,
-    onTouchTap,
+    onClick,
     icon,
     disabled,
     primary,
@@ -34,7 +34,7 @@ function createButton(props) {
     buttonElem = (
       <FloatingActionButton
         label={label}
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         icon={icon}
         disabled={disabled}
@@ -47,7 +47,7 @@ function createButton(props) {
     buttonElem = (
       <FloatingActionButton
         label={label}
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         icon={icon}
         disabled={disabled}
@@ -58,7 +58,7 @@ function createButton(props) {
     buttonElem = (
       <IconButton
         label={label}
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         disabled={disabled}
         icon={icon}
@@ -70,7 +70,7 @@ function createButton(props) {
     buttonElem = (
       <RaisedButton
         label={label}
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         icon={icon}
         disabled={disabled}
@@ -82,7 +82,7 @@ function createButton(props) {
       <RaisedButton
         label={label}
         className={`${mainClassName} ${className}`}
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         primary={primary}
         secondary={secondary}
         disabled={disabled}
@@ -91,7 +91,7 @@ function createButton(props) {
   } else if (props.flat) {
     buttonElem = (
       <FlatButton
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         icon={icon}
         disabled={disabled}
@@ -100,7 +100,7 @@ function createButton(props) {
   } else {
     buttonElem = (
       <FlatButton
-        onTouchTap={onTouchTap}
+        onClick={onClick}
         className={`${mainClassName} ${className}`}
         icon={icon}
         disabled={disabled}
