@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import injectTapEventPlugin from "react-tap-event-plugin";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
 
@@ -20,7 +19,6 @@ import DetailsView from "..//DetailsView/DetailsView";
 /* actions */
 import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
 
-injectTapEventPlugin();
 OfflinePluginRuntime.install();
 
 export class JournalView extends Component {
