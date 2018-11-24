@@ -7,7 +7,7 @@ import moment from "moment";
 import { styles } from "./styles.scss";
 
 export default function RecordedItem(props) {
-  const { onTouchTap } = props;
+  const { onClick } = props;
   const { title, blob, startTime, stopTime } = props.item;
   const createdAt = moment(startTime).format("MMMM DD YYYY, h:mm a");
   const totalSize = (blob.size / 1000000).toFixed(2);
@@ -16,7 +16,7 @@ export default function RecordedItem(props) {
     .replace(".", ":");
 
   return (
-    <div className={styles} onTouchTap={goToDetailsView.bind(null, onTouchTap)}>
+    <div className={styles} onClick={goToDetailsView.bind(null, onClick)}>
       <div className="item">
         <h2 className="title">{title || "Recording X"}</h2>
         <div className="created-at">{createdAt}</div>
@@ -27,8 +27,8 @@ export default function RecordedItem(props) {
   );
 }
 
-function goToDetailsView(onTouchTap) {
-  onTouchTap();
+function goToDetailsView(onClick) {
+  onClick();
 }
 
 RecordedItem.propTypes = {

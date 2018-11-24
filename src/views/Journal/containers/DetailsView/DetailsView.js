@@ -100,7 +100,7 @@ class DetailsView extends Component {
             className="play"
             floating={true}
             icon={buttonIcon}
-            onTouchTap={buttonMode}
+            onClick={buttonMode}
             secondary={true}
           />
           <div className="audio-controls">
@@ -117,7 +117,7 @@ class DetailsView extends Component {
     return (
       <div>
         <header>
-          <IconButton className="btn close" onTouchTap={this.closeNav}>
+          <IconButton className="btn close" onClick={this.closeNav}>
             <NavigationBack />
           </IconButton>
         </header>

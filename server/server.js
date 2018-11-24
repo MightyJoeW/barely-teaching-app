@@ -1,6 +1,4 @@
 const path = require("path");
-const { json } = require("body-parser");
-const cors = require("cors");
 const express = require("express");
 
 const publicPath = path.join(__dirname, "..", "public");
