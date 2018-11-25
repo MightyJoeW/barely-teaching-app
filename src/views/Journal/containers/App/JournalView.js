@@ -11,13 +11,12 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 // application containers
 import JournalHeader from "../JournalHeader/JournalHeader";
-import LeftNavBar from "../LeftNavBar/LeftNavBar";
 import RecordView from "../RecordView/RecordView";
 import RecordingsView from "../RecordingsView/RecordingsView";
 import DetailsView from "..//DetailsView/DetailsView";
 
 /* actions */
-import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
+import * as audioActionCreators from "../../../../redux/actions/actions-audios";
 
 OfflinePluginRuntime.install();
 
@@ -48,7 +47,6 @@ export class JournalView extends Component {
                 </Switch>
               </div>
               <DetailsView />
-              <LeftNavBar />
             </div>
           </BrowserRouter>
         </div>
@@ -65,4 +63,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(JournalView);
+export default connect(
+  null,
+  mapDispatchToProps
+)(JournalView);

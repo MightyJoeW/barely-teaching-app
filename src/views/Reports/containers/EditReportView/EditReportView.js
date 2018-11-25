@@ -4,7 +4,7 @@ import ReportForm from "../../components/ReportForm";
 import {
   startEditReport,
   startRemoveReport
-} from "../../../../ducks/actions/reports";
+} from "../../../../redux/actions/reports";
 
 export class EditReportView extends Component {
   onSubmit = report => {

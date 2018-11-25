@@ -7,7 +7,7 @@ import {
   IconButton
 } from "material-ui";
 
-//Buton styles
+//Button styles
 import { styles } from "./styles.scss";
 
 const mainClassName = "btn";

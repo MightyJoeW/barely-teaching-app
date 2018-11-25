@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import AppBar from "../../components/AppBar/AppBar";
 import Navigation from "../../components/Navigation/Navigation";
 import { withRouter } from "react-router-dom";
 
 /* actions */
-import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
+import * as uiActionCreators from "../../../../redux/actions/actions-ui";
 
 /* component styles */
 import { styles } from "./styles.scss";
@@ -23,7 +22,6 @@ class JournalHeader extends React.Component {
   render() {
     return (
       <div className={styles}>
-        {/*<AppBar onLeftIconButtonClick={this.handleToggle} />*/}
         <Navigation />
       </div>
     );
@@ -45,5 +43,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(JournalHeader)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(JournalHeader)
 );

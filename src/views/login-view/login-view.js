@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { startLogin } from "../../ducks/actions/auth";
+import { startLogin } from "../../redux/actions/auth";
+// import "./login-view.scss";
 
 export const LoginView = ({ startLogin }) => (
   <div className="box-layout">
@@ -18,4 +19,7 @@ const mapDispatchToProps = dispatch => ({
   startLogin: () => dispatch(startLogin())
 });
 
-export default connect(undefined, mapDispatchToProps)(LoginView);
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(LoginView);

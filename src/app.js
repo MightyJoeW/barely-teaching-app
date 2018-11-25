@@ -1,20 +1,23 @@
-import 'react-dates/initialize'
+// EXTERNAL DEPENDENCIES
+import "react-dates/initialize";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter, { history } from "./routers/AppRouter";
-import configureStore from "./ducks/store/configureStore";
-import { startSetReports } from "./ducks/actions/reports";
-import { login, logout } from "./ducks/actions/auth";
-import getVisibleReports from "./views/Reports/selectors/reports";
-import "normalize.css/normalize.css";
-import "./styles/styles.scss";
 import "react-dates/lib/css/_datepicker.css";
-import { firebase } from "./firebase/firebase";
-import LoadingPage from "./components/LoadingPage";
+import "normalize.css/normalize.css";
 
+// INTERNAL DEPENDENCIES
+import "./styles/styles.scss";
+import LoadingPage from "./components/loading-page";
+import configureStore from "./redux/store/configureStore";
+import { firebase } from "./firebase/firebase";
+import { login, logout } from "./redux/actions/auth";
+import { startSetReports } from "./redux/actions/reports";
+
+// COMPONENT DEFINITION
 const store = configureStore();
-const jsx = (
+const app = (
   <Provider store={store}>
     <AppRouter />
   </Provider>
@@ -22,13 +25,12 @@ const jsx = (
 let hasRendered = false;
 const renderApp = () => {
   if (!hasRendered) {
-    ReactDOM.render(jsx, document.getElementById("app"));
+    ReactDOM.render(app, document.getElementById("app"));
     hasRendered = true;
   }
 };
 
 ReactDOM.render(<LoadingPage />, document.getElementById("app"));
-
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {

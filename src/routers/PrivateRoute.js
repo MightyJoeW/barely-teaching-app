@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/header";
 
-const subtitle = `The #1 companion for jaded teachers`;
+const subTitle = `The #1 App for Teachers After Hours`;
 
 export const PrivateRoute = ({
   isAuthenticated,
@@ -14,10 +14,10 @@ export const PrivateRoute = ({
     {...rest}
     component={props =>
       isAuthenticated ? (
-        <div>
-          <Header subtitle={subtitle} />
+        <Fragment>
+          <Header subTitle={subTitle} />
           <Component {...props} />
-        </div>
+        </Fragment>
       ) : (
         <Redirect to="/" />
       )
