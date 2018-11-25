@@ -1,6 +1,10 @@
 {
   "name": "barely-teaching-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.11.2",
+    "yarn": "1.21.1"
+  },
   "main": "index.js",
   "author": "Joe Warren",
   "license": "MIT",
