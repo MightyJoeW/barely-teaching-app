@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -31,25 +31,20 @@ export class JournalView extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-        <div>
-          <BrowserRouter>
-            <div>
-              <JournalHeader />
-              <div className="container">
-                <Switch>
-                  <Route path="/journal/record" component={RecordView} />
-                  <Route
-                    path="/journal/recordings"
-                    component={RecordingsView}
-                  />
-                  <Route path="/recording:id" component={RecordingsView} />
-                  <Redirect from="/journal" to="/journal/record" />
-                </Switch>
-              </div>
-              <DetailsView />
+        <BrowserRouter>
+          <Fragment>
+            <JournalHeader />
+            <div className="container">
+              <Switch>
+                <Route path="/journal/record" component={RecordView} />
+                <Route path="/journal/recordings" component={RecordingsView} />
+                <Route path="/recording:id" component={RecordingsView} />
+                <Redirect from="/journal" to="/journal/record" />
+              </Switch>
             </div>
-          </BrowserRouter>
-        </div>
+            <DetailsView />
+          </Fragment>
+        </BrowserRouter>
       </MuiThemeProvider>
     );
   }

@@ -92,7 +92,6 @@ export default class Tasks extends Component {
             />
           </div>
         </div>
-
         <OptionModal
           selectedOption={selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}

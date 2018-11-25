@@ -1,8 +1,9 @@
+// EXTERNAL DEPENDENCIES
 import React from "react";
-import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 
-//COMPONENTS
+// COMPONENTS
 import Tasks from "../views/tasks/tasks";
 import HelpView from "../views/HelpView";
 import JournalView from "../views/Journal/containers/App/JournalView";
@@ -17,17 +18,15 @@ export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
-    <div>
-      <Switch>
-        <PublicRoute path="/" component={LoginView} exact={true} />
-        <PrivateRoute path="/tasks" component={Tasks} />
-        <PrivateRoute path="/journal" component={JournalView} />
-        {/* <PrivateRoute path="/kidfree" component={KidFreeView} /> */}
-        <PrivateRoute path="/reports" component={ReportsView} />
-        <PrivateRoute path="/help" component={HelpView} />
-        <Route component={NotFoundView} />
-      </Switch>
-    </div>
+    <Switch>
+      <PublicRoute path="/" component={LoginView} exact={true} />
+      <PrivateRoute path="/tasks" component={Tasks} />
+      <PrivateRoute path="/journal" component={JournalView} />
+      {/* <PrivateRoute path="/kidfree" component={KidFreeView} /> */}
+      <PrivateRoute path="/reports" component={ReportsView} />
+      <PrivateRoute path="/help" component={HelpView} />
+      <Route component={NotFoundView} />
+    </Switch>
   </Router>
 );
 

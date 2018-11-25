@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
@@ -94,7 +94,7 @@ class DetailsView extends Component {
       const buttonMode = isPlaying ? this.pauseAudio : this.playAudio;
 
       body = (
-        <div>
+        <Fragment>
           <span className="audio-title">{title}</span>
           <Button
             className="play"
@@ -108,21 +108,21 @@ class DetailsView extends Component {
               <source src={URL.createObjectURL(blob)} type="audio/webm" />
             </audio>
           </div>
-        </div>
+        </Fragment>
       );
     } else {
-      body = <div>No recording was found</div>;
+      body = <Fragment>No recording was found</Fragment>;
     }
 
     return (
-      <div>
+      <Fragment>
         <header>
           <IconButton className="btn close" onClick={this.closeNav}>
             <NavigationBack />
           </IconButton>
         </header>
         <div className="details-view-body">{body}</div>
-      </div>
+      </Fragment>
     );
   }
 

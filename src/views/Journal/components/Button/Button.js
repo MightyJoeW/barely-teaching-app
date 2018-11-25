@@ -17,7 +17,7 @@ export default function Button(props) {
   return <div className={styles}>{buttonElem}</div>;
 }
 
-function createButton(props) {
+const createButton = props => {
   const {
     label,
     className,
@@ -109,7 +109,7 @@ function createButton(props) {
   }
 
   return buttonElem;
-}
+};
 
 Button.propTypes = {
   raised: PropTypes.bool,

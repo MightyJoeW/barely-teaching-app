@@ -1,0 +1,32 @@
+.login-wrapper {
+  background: $off-white;
+}
+
+.login-cover {
+  background-image: url("/images/login-cover.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login__title {
+  margin: 0 0 $m-size 0;
+  line-height: 1;
+}
+
+.login-button {
+  background: $baby-blue;
+  border: none;
+  border-radius: 500px;
+  color: #fff;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 700;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+}
+
+.button--secondary {
+  background: #888;
+}

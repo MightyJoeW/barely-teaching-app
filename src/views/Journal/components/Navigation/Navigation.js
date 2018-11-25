@@ -1,3 +1,4 @@
+// EXTERNAL DEPENDENCIES
 import React, { Component } from "react";
 import { Tabs, Tab } from "material-ui";
 import { withRouter } from "react-router-dom";
@@ -5,11 +6,9 @@ import { withRouter } from "react-router-dom";
 //Navigation styles
 import { styles } from "./styles.scss";
 
+// COMPONENT DEFINITION
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { currentRoute: "/journal/record" };
-  }
+  state = { currentRoute: "/journal/record" };
 
   //highlight listen tab when saving and rerouting to recordings
   componentWillReceiveProps(nextProps) {
