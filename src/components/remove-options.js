@@ -1,8 +1,27 @@
-import React from "react";
-import Option from "./Option";
+// EXTERNAL DEPENDENCIES
+import React, { Fragment } from "react";
 
+// Remove text
+export const Option = props => (
+  <div className="option">
+    <p className="option__text">
+      {props.count}. {props.optionText}
+    </p>
+
+    <button
+      className="button button--link"
+      onClick={e => {
+        props.handleDeleteOption(props.optionText);
+      }}
+    >
+      Remove
+    </button>
+  </div>
+);
+
+// Options component
 const Options = props => (
-  <div>
+  <Fragment>
     <div className="widget-header">
       <h3 className="widget-header__title"> Your Options </h3>
       <button
@@ -25,7 +44,7 @@ const Options = props => (
         handleDeleteOption={props.handleDeleteOption}
       />
     ))}
-  </div>
+  </Fragment>
 );
 
 export default Options;

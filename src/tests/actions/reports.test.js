@@ -9,7 +9,7 @@ import {
   startRemoveReport,
   setReports,
   startSetReports
-} from "../../ducks/actions/reports";
+} from "../../redux/actions/reports";
 import reports from "../fixtures/reports";
 import database from "../../firebase/firebase";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { startLogin } from "../../ducks/actions/auth";
+import { startLogin } from "../../redux/actions/auth";
 
 export const LoginView = ({ startLogin }) => (
   <div className="box-layout">

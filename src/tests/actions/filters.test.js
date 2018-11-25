@@ -5,7 +5,7 @@ import {
   setTextFilter,
   sortByPeriod,
   sortByDate
-} from "../../ducks/actions/filters";
+} from "../../redux/actions/filters";
 
 test("should generate set start date action object", () => {
   const action = setStartDate(moment(0));

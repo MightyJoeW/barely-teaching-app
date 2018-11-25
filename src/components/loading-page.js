@@ -1,5 +1,7 @@
+// EXTERNAL DEPENDENCIES
 import React from "react";
 
+// COMPONENT DEFINITION
 const LoadingPage = () => (
   <div className="loader">
     <img className="loader__image" src="/images/loader.gif" />

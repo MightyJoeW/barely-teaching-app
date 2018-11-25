@@ -1,4 +1,4 @@
-import reportsReducer from "../../ducks/reducers/reports";
+import reportsReducer from "../../redux/reducers/reports";
 import reports from "../fixtures/reports";
 
 test("should set default state", () => {

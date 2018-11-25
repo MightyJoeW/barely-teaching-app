@@ -1,13 +1,14 @@
-import React from "react";
-import OptionModal from "./OptionModal";
+// EXTERNAL DEPENDENCIES
+import React, { Component, Fragment } from "react";
 
-//COMPONENTS
-import AddOption from "./AddOption";
-import Header from "./Header";
-import Action from "./Action";
-import Options from "./Options";
+// LOCAL DEPENDENCIES
+import ActionButton from "../../components/action-button";
+import AddOptionButton from "../../components/add-option-button";
+import OptionModal from "../../components/option-modal";
+import RemoveOptions from "../../components/remove-options";
 
-export default class BarelyTeachingApp extends React.Component {
+// COMPONENT DEFINITION
+export default class Tasks extends Component {
   state = {
     options: [],
     selectedOption: undefined
@@ -32,7 +33,7 @@ export default class BarelyTeachingApp extends React.Component {
     }));
   };
 
-  handleAddOption = option => {
+  handleAddOptionButton = option => {
     if (!option) {
       return "Enter valid value to add item";
     } else if (this.state.options.indexOf(option) > -1) {
@@ -70,33 +71,33 @@ export default class BarelyTeachingApp extends React.Component {
       localStorage.setItem("options", json);
     }
   }
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
-  }
 
   render() {
+    const { options, selectedOption } = this.state;
     return (
-      <div>
+      <Fragment>
         <div className="container">
-          <Action
-            hasOptions={this.state.options.length > 0}
+          <ActionButton
+            hasOptions={options.length > 0}
             handlePick={this.handlePick}
           />
           <div className="widget">
-            <Options
-              options={this.state.options}
+            <RemoveOptions
+              options={options}
               handleDeleteOptions={this.handleDeleteOptions}
               handleDeleteOption={this.handleDeleteOption}
             />
-            <AddOption handleAddOption={this.handleAddOption} />
+            <AddOptionButton
+              handleAddOptionButton={this.handleAddOptionButton}
+            />
           </div>
         </div>
 
         <OptionModal
-          selectedOption={this.state.selectedOption}
+          selectedOption={selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
         />
-      </div>
+      </Fragment>
     );
   }
 }

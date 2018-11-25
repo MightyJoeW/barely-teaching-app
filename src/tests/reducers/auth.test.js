@@ -1,4 +1,4 @@
-import auth from "../../ducks/reducers/auth";
+import auth from "../../redux/reducers/auth";
 
 test("should set uid for login", () => {
   const action = {

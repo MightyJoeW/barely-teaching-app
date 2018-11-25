@@ -7,7 +7,7 @@ import {
   sortByPeriod,
   setStartDate,
   setEndDate
-} from "../../../ducks/actions//filters";
+} from "../../../redux/actions//filters";
 
 export class ReportListFilters extends Component {
   state = {

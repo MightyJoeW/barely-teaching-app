@@ -10,8 +10,8 @@ import PlayButton from "material-ui/svg-icons/av/play-arrow";
 import PauseButton from "material-ui/svg-icons/av/pause";
 
 /* actions */
-import * as uiActionCreators from "../../../../ducks/actions/actions-ui";
-import * as audioActionCreators from "../../../../ducks/actions/actions-audios";
+import * as uiActionCreators from "../../../../redux/actions/actions-ui";
+import * as audioActionCreators from "../../../../redux/actions/actions-audios";
 
 /* component styles */
 import { styles } from "./styles.scss";
@@ -149,7 +149,7 @@ class DetailsView extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  // console.log(state);
   return {
     ui: state.ui,
     audio: state.audio
@@ -166,5 +166,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(DetailsView)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DetailsView)
 );

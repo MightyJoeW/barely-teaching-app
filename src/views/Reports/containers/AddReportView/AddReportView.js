@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
-import { startAddReport } from "../../../../ducks/actions/reports";
+import { startAddReport } from "../../../../redux/actions/reports";
 
 export class AddReportView extends Component {
   onSubmit = report => {

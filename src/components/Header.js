@@ -1,9 +1,13 @@
+// EXTERNAL DEPENDENCIES
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { startLogout } from "../ducks/actions/auth";
 
-export const Header = ({ startLogout }) => (
+// INTERNAL DEPENDENCIES
+import { startLogout } from "../redux/actions/auth";
+
+// COMPONENT DEFINITION
+const Header = ({ startLogout, subTitle }) => (
   <div className="header">
     <div className="container">
       <div className="header-container">
@@ -13,7 +17,7 @@ export const Header = ({ startLogout }) => (
         </button>
       </div>
 
-      <h2 className="header__subtitle">The #1 App for Teachers After Hours</h2>
+      <h2 className="header__subtitle">{subTitle}</h2>
       <div className="header__content">
         <NavLink
           className="header__nav"
@@ -55,4 +59,7 @@ const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(Header);

@@ -1,6 +1,8 @@
+// EXTERNAL DEPENDENCIES
 import React from "react";
 import Modal from "react-modal";
 
+// COMPONENT DEFINITION
 const OptionModal = props => (
   <Modal
     isOpen={!!props.selectedOption} // !! convert to real boolean values
