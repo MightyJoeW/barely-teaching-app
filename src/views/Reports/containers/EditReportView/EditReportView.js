@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import ReportForm from "../../components/ReportForm";
 import {
@@ -17,7 +17,7 @@ export class EditReportView extends Component {
   };
   render() {
     return (
-      <div>
+      <Fragment>
         <div className="">
           <div className="content-container">
             <h1 className="reports-header__title"> Edit Report </h1>
@@ -32,7 +32,7 @@ export class EditReportView extends Component {
             Remove Report
           </button>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
@@ -46,4 +46,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   startRemoveReport: data => dispatch(startRemoveReport(data))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditReportView);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditReportView);

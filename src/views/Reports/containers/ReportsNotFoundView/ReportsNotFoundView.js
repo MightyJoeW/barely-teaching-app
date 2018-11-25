@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const ReportsNotFoundView = () => (
-  <div>
+  <Fragment>
     404 - Page Not Found...feels bad.
     <Link to="/reports">Return to Reports</Link>
-  </div>
+  </Fragment>
 );
 
 export default ReportsNotFoundView;

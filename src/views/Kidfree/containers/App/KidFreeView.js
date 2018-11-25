@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import SummerCalc from "../../components/SummerCalc";
 import Calendar from "../../components/Calendar";
 
 const KidFreeView = () => {
   return (
-    <div>
+    <Fragment>
       <SummerCalc />
       <Calendar />
-    </div>
+    </Fragment>
   );
 };
 

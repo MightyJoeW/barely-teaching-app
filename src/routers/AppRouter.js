@@ -17,17 +17,15 @@ export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
-    <div>
-      <Switch>
-        <PublicRoute path="/" component={LoginView} exact={true} />
-        <PrivateRoute path="/tasks" component={Tasks} />
-        <PrivateRoute path="/journal" component={JournalView} />
-        {/* <PrivateRoute path="/kidfree" component={KidFreeView} /> */}
-        <PrivateRoute path="/reports" component={ReportsView} />
-        <PrivateRoute path="/help" component={HelpView} />
-        <Route component={NotFoundView} />
-      </Switch>
-    </div>
+    <Switch>
+      <PublicRoute path="/" component={LoginView} exact={true} />
+      <PrivateRoute path="/tasks" component={Tasks} />
+      <PrivateRoute path="/journal" component={JournalView} />
+      {/* <PrivateRoute path="/kidfree" component={KidFreeView} /> */}
+      <PrivateRoute path="/reports" component={ReportsView} />
+      <PrivateRoute path="/help" component={HelpView} />
+      <Route component={NotFoundView} />
+    </Switch>
   </Router>
 );
 
