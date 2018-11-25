@@ -7,7 +7,7 @@ import Tasks from "../views/tasks/tasks";
 import HelpView from "../views/HelpView";
 import JournalView from "../views/Journal/containers/App/JournalView";
 // import KidFreeView from "../views//Kidfree/containers/App/KidFreeView";
-import LoginView from "../views/LoginView/LoginView";
+import LoginView from "../views/login-view/login-view";
 import NotFoundView from "../views/NotFoundView";
 import ReportsView from "../views/Reports/containers/App/ReportsView";
 import PrivateRoute from "./PrivateRoute";

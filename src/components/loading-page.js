@@ -1,10 +1,11 @@
 // EXTERNAL DEPENDENCIES
 import React from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 // COMPONENT DEFINITION
 const LoadingPage = () => (
   <div className="loader">
-    <img className="loader__image" src="/images/loader.gif" />
+    <CircularProgress />
   </div>
 );
 
