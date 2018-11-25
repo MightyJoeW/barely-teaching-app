@@ -1,8 +1,9 @@
+// EXTERNAL DEPENDENCIES
 import React from "react";
-import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 
-//COMPONENTS
+// COMPONENTS
 import Tasks from "../views/tasks/tasks";
 import HelpView from "../views/HelpView";
 import JournalView from "../views/Journal/containers/App/JournalView";

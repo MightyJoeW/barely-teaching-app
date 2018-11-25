@@ -1,14 +1,12 @@
+// EXTERNAL DEPENDENCIES
 import React, { Component } from "react";
 import { ReactMic } from "react-mic";
 
 //Microphone styles
 import { styles } from "./styles.scss";
 
+// COMPONENT DEFINITION
 export default class Microphone extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { record, onStop } = this.props;
 

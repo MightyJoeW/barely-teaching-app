@@ -1,34 +1,26 @@
-import React from "react";
-import moment from "moment";
+// EXTERNAL DEPENDENCIES
+import React, { Component } from "react";
 
-export default class SummerCalc extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
+// COMPONENT DEFINITION
+export default class SummerCalc extends Component {
+  state = { value: "" };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  handleChange = e => {
+    this.setState({ value: e.target.value });
+  };
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
+  handleSubmit = e => {
     alert(`${this.state.value} more days until summer!`);
-    event.preventDefault();
-  }
+    e.preventDefault();
+  };
 
   render() {
+    const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Enter last day of school
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
+          <input type="text" value={value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

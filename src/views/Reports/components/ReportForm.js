@@ -86,7 +86,7 @@ export default class ReportForm extends Component {
         />
         <textarea
           className="textarea"
-          placeholder="Add a note for your reward or discpline"
+          placeholder="Add a note for your reward or discipline"
           value={this.state.note}
           onChange={this.onNoteChange}
         />

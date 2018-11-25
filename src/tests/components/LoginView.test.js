@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { LoginView } from "../../views/LoginView/LoginView";
+import { LoginView } from "../../views/login-view/login-view";
 import reports from "../fixtures/reports";
 
 test("should correctly render LoginView", () => {

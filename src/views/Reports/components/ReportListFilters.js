@@ -49,7 +49,7 @@ export class ReportListFilters extends Component {
               value={this.props.filters.sortBy}
               onChange={this.onSortChange}
             >
-              <option valee="date">Date</option>
+              <option value="date">Date</option>
               <option value="period">Period</option>
             </select>
           </div>
@@ -83,4 +83,7 @@ const mapDispatchToProps = dispatch => ({
   setEndDate: endDate => dispatch(setEndDate(endDate))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReportListFilters);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ReportListFilters);

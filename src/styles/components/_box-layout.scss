@@ -1,6 +1,6 @@
 .box-layout {
   align-items: center;
-  background: url("/images/bg.jpg");
+  // background: url("/images/bg.jpg");
   background-size: cover;
   display: flex;
   height: 100vh;
@@ -13,11 +13,7 @@
   border-radius: 3px;
   color: $dark-grey;
   padding: $l-size $m-size;
+  margin-left: 4%;
   text-align: center;
   width: rem;
-}
-
-.box-layout__title {
-  margin: 0 0 $m-size 0;
-  line-height: 1;
 }
