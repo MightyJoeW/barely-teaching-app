@@ -16,8 +16,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:watchSlow": "jest --watch --coverage ",
-    "dev-server": "node server/server.js",
-    "heroku-postbuild": "npm run build:prod"
+    "dev-server": "node server/server.js"
   },
   "dependencies": {
     "@material-ui/core": "^3.5.1",
