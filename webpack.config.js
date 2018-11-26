@@ -81,8 +81,7 @@ module.exports = env => {
       contentBase: path.join(__dirname, "public"),
       historyApiFallback: true,
       publicPath: "/dist/"
-    },
-    mode: "development"
+    }
   }; // setup big file to only load when user opens devtools //tell devServer for all 404 pages to send back html file
 };
 
