@@ -15,7 +15,7 @@ module.exports = env => {
   const isProduction = env === "production";
   const CSSExtract = new ExtractTextPlugin("styles.css");
   return {
-    entry: ["babel-polyfill", "./src/app.js"],
+    entry: ["@babel/polyfill", "./src/app.js"],
     output: {
       path: path.join(__dirname, "public", "dist"),
       filename: "bundle.js"
@@ -25,6 +25,9 @@ module.exports = env => {
         {
           // run babel when encountering a js file
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/env"]
+          },
           test: /\.js$/,
           exclude: /node_modules/
         },
