@@ -3,4 +3,4 @@ src/playground/
 public/dist
 .env.test
 .env.development
-util.js
+/util.js
