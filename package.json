@@ -13,7 +13,7 @@
     "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.2",
     "babel-cli": "6.24.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
